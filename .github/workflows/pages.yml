@@ -1,0 +1,67 @@
+name: Pages — portal
+
+# Publish the static portal → https://alexar76.github.io/use-cases-portal/
+on:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - ideas.html
+      - css/**
+      - js/**
+      - locales/**
+      - assets/**
+      - data/**
+      - .nojekyll
+      - .github/workflows/pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-use-cases-portal
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Ensure Pages source is GitHub Actions
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api --method PUT "/repos/${{ github.repository }}/pages" \
+            -f build_type=workflow
+
+      - name: Prepare Pages artifact
+        run: |
+          mkdir -p _pages
+          rsync -a \
+            --exclude '.git' \
+            --exclude '.github' \
+            --exclude 'docs' \
+            --exclude 'scripts' \
+            --exclude '_pages' \
+            --exclude '*.md' \
+            --exclude '.gitignore' \
+            --exclude 'LICENSE' \
+            ./ _pages/
+          touch _pages/.nojekyll
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _pages
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

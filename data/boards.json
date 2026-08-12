@@ -1,0 +1,216 @@
+{
+  "boards": [
+    {
+      "id": "physical",
+      "scene": "globe",
+      "accent": "#3de0c5",
+      "ideas": ["weather-risk", "sensor-publisher", "fire-hotspot", "situation-brief", "nearest-read", "gnss-jamming-alert", "parametric-trigger", "evidence-export"]
+    },
+    {
+      "id": "marketplace",
+      "scene": "hex",
+      "accent": "#60a5fa",
+      "ideas": ["capability-15", "hub-embed"]
+    },
+    {
+      "id": "safety",
+      "scene": "shield",
+      "accent": "#f0c14a",
+      "ideas": ["warden-mcp"]
+    },
+    {
+      "id": "verify",
+      "scene": "star",
+      "accent": "#a78bfa",
+      "ideas": ["metis-answers", "awr-receipts"]
+    },
+    {
+      "id": "factory",
+      "scene": "blocks",
+      "accent": "#34d399",
+      "ideas": ["factory-oneshot"]
+    },
+    {
+      "id": "oracles",
+      "scene": "platonic",
+      "accent": "#f472b6",
+      "ideas": ["fair-draw"]
+    },
+    {
+      "id": "ops",
+      "scene": "radar",
+      "accent": "#fb7185",
+      "ideas": ["momus-gate"]
+    }
+  ],
+  "ideas": {
+    "weather-risk": {
+      "chip": "live-wedge",
+      "scene": "storm",
+      "accent": "#3de0c5",
+      "cta": "https://modelmarket.dev",
+      "ctaKey": "touchWeather",
+      "rails": ["GAIA", "ATLAS", "Hub"],
+      "livePath": [
+        { "key": "idea.weather-risk.step1", "href": "https://modelmarket.dev" },
+        { "key": "idea.weather-risk.step2", "href": "https://iot.modelmarket.dev" },
+        { "key": "idea.weather-risk.step3", "href": "https://atlas.modelmarket.dev" }
+      ]
+    },
+    "sensor-publisher": {
+      "chip": "live-rails",
+      "scene": "pins",
+      "accent": "#3de0c5",
+      "cta": "https://atlas.modelmarket.dev",
+      "ctaKey": "touchPublisher",
+      "rails": ["GAIA", "ATLAS", "Hub"],
+      "livePath": [
+        { "key": "idea.sensor-publisher.step1", "href": "https://atlas.modelmarket.dev" },
+        { "key": "idea.sensor-publisher.step2", "href": "https://iot.modelmarket.dev" },
+        { "key": "idea.sensor-publisher.step3", "href": "https://modelmarket.dev" }
+      ]
+    },
+    "fire-hotspot": {
+      "chip": "live-wedge",
+      "scene": "storm",
+      "accent": "#f97316",
+      "cta": "https://atlas.modelmarket.dev",
+      "ctaKey": "touchFire",
+      "rails": ["GAIA", "ATLAS", "Hub"],
+      "livePath": [
+        { "key": "idea.fire-hotspot.step1", "href": "https://atlas.modelmarket.dev" },
+        { "key": "idea.fire-hotspot.step2", "href": "https://iot.modelmarket.dev" },
+        { "key": "idea.fire-hotspot.step3", "href": "https://modelmarket.dev" }
+      ]
+    },
+    "situation-brief": {
+      "chip": "live-wedge",
+      "scene": "storm",
+      "accent": "#3de0c5",
+      "cta": "https://atlas.modelmarket.dev",
+      "ctaKey": "touchSituation",
+      "rails": ["ATLAS", "GAIA", "Hub"],
+      "livePath": [
+        { "key": "idea.situation-brief.step1", "href": "https://atlas.modelmarket.dev" },
+        { "key": "idea.situation-brief.step2", "href": "https://atlas.modelmarket.dev" },
+        { "key": "idea.situation-brief.step3", "href": "https://modelmarket.dev" }
+      ]
+    },
+    "nearest-read": {
+      "chip": "live-wedge",
+      "scene": "pins",
+      "accent": "#22d3ee",
+      "cta": "https://atlas.modelmarket.dev",
+      "ctaKey": "touchNearest",
+      "rails": ["ATLAS", "Hub"],
+      "livePath": [
+        { "key": "idea.nearest-read.step1", "href": "https://atlas.modelmarket.dev" },
+        { "key": "idea.nearest-read.step2", "href": "https://atlas.modelmarket.dev" },
+        { "key": "idea.nearest-read.step3", "href": "https://modelmarket.dev" }
+      ]
+    },
+    "gnss-jamming-alert": {
+      "chip": "idea",
+      "scene": "radar",
+      "accent": "#e879f9",
+      "cta": "https://modelmarket.dev",
+      "ctaKey": "touchJamming",
+      "rails": ["GAIA", "ATLAS", "Hub"],
+      "livePath": [
+        { "key": "idea.gnss-jamming-alert.step1", "href": "https://modelmarket.dev" },
+        { "key": "idea.gnss-jamming-alert.step2", "href": "https://iot.modelmarket.dev" },
+        { "key": "idea.gnss-jamming-alert.step3", "href": "https://atlas.modelmarket.dev" }
+      ]
+    },
+    "parametric-trigger": {
+      "chip": "partner",
+      "scene": "threshold",
+      "accent": "#60a5fa",
+      "cta": "https://iot.modelmarket.dev",
+      "ctaKey": "openGaia",
+      "rails": ["GAIA", "Hub"]
+    },
+    "evidence-export": {
+      "chip": "idea",
+      "scene": "pack",
+      "accent": "#94a3b8",
+      "cta": "https://verify.modelmarket.dev",
+      "ctaKey": "openVerify",
+      "rails": ["GAIA", "AWR"]
+    },
+    "capability-15": {
+      "chip": "live",
+      "scene": "hex",
+      "accent": "#60a5fa",
+      "cta": "https://modelmarket.dev",
+      "ctaKey": "openHub",
+      "rails": ["Hub"]
+    },
+    "hub-embed": {
+      "chip": "live",
+      "scene": "embed",
+      "accent": "#38bdf8",
+      "cta": "https://modelmarket.dev/widget/demo",
+      "ctaKey": "openWidget",
+      "rails": ["Hub"]
+    },
+    "warden-mcp": {
+      "chip": "live",
+      "scene": "shield",
+      "accent": "#f0c14a",
+      "cta": "https://magic-ai-factory.com/argus/",
+      "ctaKey": "openArgus",
+      "rails": ["ARGUS", "WARDEN", "Hub"]
+    },
+    "metis-answers": {
+      "chip": "live",
+      "scene": "star",
+      "accent": "#a78bfa",
+      "cta": "https://metis.modelmarket.dev",
+      "ctaKey": "openMetis",
+      "rails": ["Metis", "Hub"]
+    },
+    "awr-receipts": {
+      "chip": "live",
+      "scene": "receipt",
+      "accent": "#c4b5fd",
+      "cta": "https://verify.modelmarket.dev",
+      "ctaKey": "openVerify",
+      "rails": ["AWR"]
+    },
+    "factory-oneshot": {
+      "chip": "live",
+      "scene": "blocks",
+      "accent": "#34d399",
+      "cta": "https://magic-ai-factory.com",
+      "ctaKey": "openFactory",
+      "rails": ["Factory", "Hub"]
+    },
+    "fair-draw": {
+      "chip": "live",
+      "scene": "platonic",
+      "accent": "#f472b6",
+      "cta": "https://lottery.modelmarket.dev",
+      "ctaKey": "openLottery",
+      "rails": ["Oracles", "Lottery"]
+    },
+    "momus-gate": {
+      "chip": "partner",
+      "scene": "radar",
+      "accent": "#fb7185",
+      "cta": "https://momus.modelmarket.dev",
+      "ctaKey": "openMomus",
+      "rails": ["MOMUS", "SKOPOS", "Treasury"]
+    }
+  },
+  "cut": [
+    "cold-chain (ops-heavy hardware)",
+    "crane site-stop (safety liability)",
+    "grid intensity (meter-of-record confusion)",
+    "prediction-market resolver (BD + dispute product)",
+    "ACEX CapShares (demo liquidity / expectations)",
+    "Signal Hunt (community, not ARR card)",
+    "desktop coach SKUs (separate catalog)",
+    "framework bridges (builder footnote)"
+  ]
+}

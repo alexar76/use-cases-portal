@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="en" data-base="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AIMarket — Use cases · Build · Investor intro</title>
+  <meta name="description" content="Verifiable provenance for agent-native products: live rails, callable products, potential ideas, and investor context.">
+  <link rel="canonical" href="https://use.modelmarket.dev/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AIMarket — Use cases · Build · Investor intro">
+  <meta property="og:description" content="Verifiable provenance → agent-native products. Live rails, callable use cases, and an opportunity catalog.">
+  <meta property="og:url" content="https://use.modelmarket.dev/">
+  <meta property="og:image" content="https://use.modelmarket.dev/assets/atlas-hero-orbit.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AIMarket — Use cases · Build · Investor intro">
+  <meta name="twitter:description" content="Verifiable provenance → agent-native products. Live rails, use cases, opportunity catalog.">
+  <meta name="twitter:image" content="https://use.modelmarket.dev/assets/atlas-hero-orbit.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/portal.css?v=20260813i">
+</head>
+<body>
+  <div id="stage" aria-hidden="true"></div>
+  <div class="veil" aria-hidden="true"></div>
+
+  <div class="site">
+    <header class="nav">
+      <a class="nav-brand" href="#top">AI<span>Market</span></a>
+      <nav class="nav-links" aria-label="Primary" data-i18n-aria-label="aria.primaryNav">
+        <a href="#onboard" data-i18n="nav.onboard">Start</a>
+        <a href="#proof" data-i18n="nav.proof">Live proof</a>
+        <a href="#rails" data-i18n="nav.rails">Rails</a>
+        <a href="#cases" data-i18n="nav.cases">Use cases</a>
+        <a href="#boards" data-i18n="nav.build">Boards</a>
+        <a href="#sensors" data-i18n="nav.sensors">Sensors</a>
+        <a href="#investors" data-i18n="nav.investors">Investors</a>
+      </nav>
+      <div class="nav-end">
+        <div class="lang" role="group" aria-label="Language" data-i18n-aria-label="nav.lang">
+          <button type="button" class="lang-btn is-active" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" class="lang-btn" data-lang="ru" aria-pressed="false">RU</button>
+          <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+          <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">FR</button>
+          <button type="button" class="lang-btn" data-lang="zh" aria-pressed="false">ZH</button>
+        </div>
+        <a class="nav-cta" href="https://atlas.modelmarket.dev" target="_blank" rel="noopener" data-i18n="nav.cta">Open ATLAS</a>
+      </div>
+    </header>
+
+    <section class="hero" id="top">
+      <div class="hero-orb-caption" aria-hidden="true">LIVE</div>
+      <div class="hero-main">
+        <div class="hero-copy">
+          <p class="hero-kicker" data-i18n="hero.kicker">Verifiable provenance · agent economy</p>
+          <h1 data-i18n="hero.h1">Know where data came from. Pay when declared checks pass.</h1>
+          <p class="hero-lead" data-i18n="hero.lead">Live rails for source-attributed readings, pay-per-call agents, and focused products that preserve evidence boundaries.</p>
+          <div class="hero-actions">
+            <a class="btn btn-live" href="#proof" data-i18n="hero.ctaTry">Run a live request</a>
+            <a class="btn btn-ghost" href="#investors" data-i18n="hero.ctaInvestor">For investors</a>
+          </div>
+        </div>
+        <aside id="live-evidence" class="live-evidence" data-state="loading" aria-live="polite" aria-label="Live evidence" data-i18n-aria-label="proof.live.aria">
+          <div class="live-evidence-grid" aria-hidden="true"></div>
+          <header class="live-evidence-head">
+            <span class="live-evidence-signal"><i></i><b data-i18n="proof.live.label">LIVE EVIDENCE</b></span>
+            <span id="live-proof-status" data-i18n="proof.live.connecting">CONNECTING</span>
+          </header>
+          <div class="live-evidence-place">
+            <small data-i18n="proof.live.current">CURRENT READING</small>
+            <strong id="live-proof-place">ATLAS fleet</strong>
+            <span id="live-proof-source">source-attributed snapshot</span>
+          </div>
+          <div class="live-evidence-reading">
+            <strong id="live-proof-temp">—</strong>
+            <div class="live-evidence-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+          <dl class="live-evidence-values">
+            <div><dt data-i18n="proof.live.humidity">HUMIDITY</dt><dd id="live-proof-humidity">—</dd></div>
+            <div><dt data-i18n="proof.live.wind">WIND</dt><dd id="live-proof-wind">—</dd></div>
+            <div><dt data-i18n="proof.live.price">CATALOG PRICE</dt><dd>$0.001</dd></div>
+          </dl>
+          <div class="live-evidence-chain" aria-label="Evidence path" data-i18n-aria-label="proof.live.pathAria">
+            <span data-i18n="proof.live.sourceNode">SOURCE</span><i></i><span>GAIA</span><i></i><span data-i18n="proof.live.receiptNode">RECEIPT</span>
+          </div>
+          <footer class="live-evidence-foot">
+            <span id="live-proof-freshness" data-i18n="proof.live.waiting">Waiting for snapshot</span>
+            <a href="#proof" data-i18n="proof.live.inspect">Inspect + run →</a>
+          </footer>
+        </aside>
+      </div>
+      <div class="scroll-hint" data-i18n="hero.scroll">Scroll</div>
+    </section>
+
+    <!-- AUDIENCE ENTRANCES -->
+    <section id="audiences" class="audience-section">
+      <div class="wrap">
+        <p class="sec-label reveal" data-i18n="aud.label">Two ways to read the system</p>
+        <h2 class="sec-title reveal" data-i18n="aud.title">Start from the outcome you need</h2>
+        <p class="sec-sub reveal" data-i18n="aud.sub">The same rails create developer leverage and investor optionality.</p>
+        <div class="audience-grid">
+          <article class="audience-card audience-card--dev reveal">
+            <span class="audience-number">01</span>
+            <p class="audience-kicker" data-i18n="aud.dev.kicker">Developer path</p>
+            <h3 data-i18n="aud.dev.title">Build on verified physical-world data</h3>
+            <p data-i18n="aud.dev.body">Understand the architecture, inspect live rails, choose a capability, and find the thin product layer you can build.</p>
+            <div class="audience-actions">
+              <a class="btn btn-live" href="#onboard" data-i18n="aud.dev.primary">Choose a build path</a>
+              <a class="btn btn-ghost" href="#boards" data-i18n="aud.dev.secondary">Explore potential ideas</a>
+            </div>
+          </article>
+          <article class="audience-card audience-card--inv reveal">
+            <span class="audience-number">02</span>
+            <p class="audience-kicker" data-i18n="aud.inv.kicker">Investor path</p>
+            <h3 data-i18n="aud.inv.title">See how verifiable provenance becomes economic leverage</h3>
+            <p data-i18n="aud.inv.body">Connect the moat, live evidence, monetization rails, reusable infrastructure, and potential vertical products.</p>
+            <div class="audience-actions">
+              <a class="btn btn-live" href="#system" data-i18n="aud.inv.primary">Understand the thesis</a>
+              <a class="btn btn-ghost" href="#investors" data-i18n="aud.inv.secondary">Read investor context</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROOF IN 60 SECONDS -->
+    <section id="proof" class="proof-section">
+      <div class="wrap">
+        <p class="sec-label reveal" data-i18n="proof.label">Proof in 60 seconds</p>
+        <h2 class="sec-title reveal" data-i18n="proof.title">Don’t take our word for it. Run the system.</h2>
+        <p class="sec-sub reveal" data-i18n="proof.sub">One real weather reading. One signed envelope. One receipt. No account and no simulated success.</p>
+
+        <div class="proof-grid reveal">
+          <article class="request-console">
+            <header class="console-head">
+              <div class="console-lights" aria-hidden="true"><i></i><i></i><i></i></div>
+              <span>gaia.weather.read@v1</span>
+              <b>$0.001</b>
+            </header>
+            <div class="console-prompt">
+              <span data-i18n="proof.console.step">01 · COPY OR RUN</span>
+              <pre><code id="hello-command">curl -sS https://iot.modelmarket.dev/ai-market/v2/invoke \
+  -H 'Content-Type: application/json' \
+  -d '{"capability_id":"gaia.weather.read@v1","input":{"device_id":"om-wx-01"}}'</code></pre>
+              <div class="console-actions">
+                <button id="run-live-request" class="btn btn-live" type="button" data-i18n="proof.console.run">Run live request</button>
+                <button id="copy-live-command" class="btn btn-ghost" type="button" data-i18n="proof.console.copy">Copy curl</button>
+              </div>
+            </div>
+            <div id="live-request-output" class="console-output" data-state="idle" aria-live="polite">
+              <div class="console-output-idle">
+                <span class="console-cursor" aria-hidden="true"></span>
+                <p data-i18n="proof.console.idle">Ready. The button performs a real public demo invoke against GAIA.</p>
+              </div>
+              <div class="console-output-result" hidden>
+                <div class="console-result-head"><span id="request-verdict">SIGNED RESULT</span><small id="request-latency">— ms</small></div>
+                <dl>
+                  <div><dt>device_id</dt><dd id="request-device">—</dd></div>
+                  <div><dt>reading</dt><dd id="request-reading">—</dd></div>
+                  <div><dt>seq</dt><dd id="request-seq">—</dd></div>
+                  <div><dt>attestation</dt><dd id="request-attestation">—</dd></div>
+                  <div><dt>price_usd</dt><dd id="request-price">—</dd></div>
+                  <div><dt>receipt</dt><dd id="request-receipt">—</dd></div>
+                </dl>
+                <p id="request-timestamp"></p>
+              </div>
+            </div>
+          </article>
+
+          <article class="architecture-console">
+            <header>
+              <span data-i18n="proof.arch.label">CLICK THE SYSTEM</span>
+              <b data-i18n="proof.arch.status">LIVE RAILS · OPTIONAL VERIFICATION</b>
+            </header>
+            <div class="architecture-map" role="group" aria-label="System architecture" data-i18n-aria-label="proof.arch.aria">
+              <button type="button" class="architecture-node is-active" data-node="source" aria-pressed="true"><i>01</i><strong data-i18n="proof.arch.source">SOURCE</strong></button>
+              <span class="architecture-link" aria-hidden="true"></span>
+              <button type="button" class="architecture-node" data-node="gaia" aria-pressed="false"><i>02</i><strong>GAIA</strong></button>
+              <span class="architecture-link" aria-hidden="true"></span>
+              <button type="button" class="architecture-node" data-node="atlas" aria-pressed="false"><i>03</i><strong>ATLAS</strong></button>
+              <span class="architecture-link" aria-hidden="true"></span>
+              <button type="button" class="architecture-node" data-node="hub" aria-pressed="false"><i>04</i><strong>HUB</strong></button>
+              <span class="architecture-link" aria-hidden="true"></span>
+              <button type="button" class="architecture-node" data-node="product" aria-pressed="false"><i>05</i><strong data-i18n="proof.arch.product">PRODUCT</strong></button>
+              <button type="button" class="architecture-node architecture-node--optional" data-node="metis" aria-pressed="false"><i>+</i><strong>METIS</strong><small data-i18n="proof.arch.optional">OPTIONAL</small></button>
+            </div>
+            <div id="architecture-detail" class="architecture-detail">
+              <div><span id="architecture-number">01</span><strong id="architecture-title" data-i18n="proof.arch.source">SOURCE</strong></div>
+              <p id="architecture-copy"></p>
+              <a id="architecture-link" href="https://www.weather.gov" target="_blank" rel="noopener" data-i18n="proof.arch.open">Open live surface ↗</a>
+            </div>
+          </article>
+        </div>
+
+        <article id="portable-proof" class="proof-capsule" data-state="idle" hidden aria-live="polite">
+          <div class="proof-capsule-aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+          <header class="proof-capsule-head">
+            <div>
+              <span class="proof-capsule-kicker"><i></i><b data-i18n="proof.capsule.kicker">PORTABLE PROOF · AWR/2</b></span>
+              <small id="proof-receipt-id">urn:uuid:—</small>
+            </div>
+            <span id="proof-ready-label" class="proof-ready-label" data-i18n="proof.capsule.ready">READY TO SHARE</span>
+          </header>
+
+          <div class="proof-capsule-grid">
+            <div class="proof-seal" aria-hidden="true">
+              <svg viewBox="0 0 220 220" role="presentation">
+                <circle class="proof-seal-orbit proof-seal-orbit--outer" cx="110" cy="110" r="96"></circle>
+                <circle class="proof-seal-orbit proof-seal-orbit--inner" cx="110" cy="110" r="72"></circle>
+                <path class="proof-seal-mark" d="M110 39 170 74v72l-60 35-60-35V74z"></path>
+                <path class="proof-seal-check" d="m78 110 21 21 45-49"></path>
+              </svg>
+              <div><strong>AWR/2</strong><span data-i18n="proof.capsule.sealed">SIGNED</span></div>
+            </div>
+
+            <div class="proof-capsule-story">
+              <p class="proof-capsule-eyebrow" data-i18n="proof.capsule.eyebrow">THE OBJECT SURVIVES THIS TAB</p>
+              <h3 data-i18n="proof.capsule.title">This is not a screenshot. You created a signed object.</h3>
+              <p data-i18n="proof.capsule.body">The Hub committed to the accepted invoke with a canonical receipt URL. Anyone can retrieve the same bytes and check the issuer signature locally.</p>
+              <ol class="proof-journey" aria-label="Proof path" data-i18n-aria-label="proof.capsule.pathAria">
+                <li style="--proof-step:0"><i></i><span>01</span><strong>LIVE</strong><small data-i18n="proof.capsule.live">reading</small></li>
+                <li style="--proof-step:1"><i></i><span>02</span><strong>GAIA</strong><small data-i18n="proof.capsule.gaia">attested</small></li>
+                <li style="--proof-step:2"><i></i><span>03</span><strong>HUB</strong><small data-i18n="proof.capsule.hub">sealed</small></li>
+                <li style="--proof-step:3"><i></i><span>04</span><strong>VERIFY</strong><small data-i18n="proof.capsule.verify">local check</small></li>
+              </ol>
+            </div>
+
+            <div class="proof-capsule-actions">
+              <dl>
+                <div><dt data-i18n="proof.capsule.issuer">ISSUER</dt><dd id="proof-issuer">did:key:—</dd></div>
+                <div><dt data-i18n="proof.capsule.document">DOCUMENT</dt><dd>W3C VC · eddsa-jcs-2022</dd></div>
+              </dl>
+              <a id="verify-proof" class="btn proof-action-primary" href="https://verify.modelmarket.dev" target="_blank" rel="noopener" data-i18n="proof.capsule.verifyCta">Verify signature locally ↗</a>
+              <button id="share-proof" class="btn proof-action-share" type="button" data-i18n="proof.capsule.shareCta">Copy proof link</button>
+              <div class="proof-action-tools">
+                <a id="open-proof-json" href="https://modelmarket.dev" target="_blank" rel="noopener" data-i18n="proof.capsule.openJson">Open receipt JSON ↗</a>
+                <button id="copy-proof-json" type="button" data-i18n="proof.capsule.copyJson">Copy JSON</button>
+              </div>
+              <p data-i18n="proof.capsule.disclaimer">The check confirms who signed the invoke receipt and that it was not altered. It does not prove the physical reading is true.</p>
+            </div>
+          </div>
+        </article>
+
+        <div class="term-rail reveal" aria-label="Plain-language glossary" data-i18n-aria-label="proof.terms.aria">
+          <span data-i18n="proof.terms.label">PLAIN-LANGUAGE DECODER</span>
+          <button type="button" class="term-chip" data-term="live">LIVE</button>
+          <button type="button" class="term-chip" data-term="sim">SIM</button>
+          <button type="button" class="term-chip" data-term="attestation">attestation</button>
+          <button type="button" class="term-chip" data-term="invoke">invoke</button>
+          <button type="button" class="term-chip" data-term="receipt">receipt</button>
+          <button type="button" class="term-chip" data-term="pay">Pay-on-Verified</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SYSTEM VALUE CHAIN -->
+    <section id="system" class="system-section">
+      <div class="wrap">
+        <p class="sec-label reveal" data-i18n="system.label">One system, not separate projects</p>
+        <h2 class="sec-title reveal" data-i18n="system.title">How verifiable provenance becomes economic value</h2>
+        <p class="sec-sub reveal" data-i18n="system.sub">Each stage makes the next one possible; shared rails lower the cost of launching another vertical product.</p>
+        <ol class="value-chain reveal">
+          <li><span>01</span><strong data-i18n="system.s1t">Physical source</strong><small data-i18n="system.s1d">A device or external feed observes the world.</small></li>
+          <li><span>02</span><strong data-i18n="system.s2t">Signed reading</strong><small data-i18n="system.s2d">Identity, signature, and sequence preserve provenance.</small></li>
+          <li><span>03</span><strong data-i18n="system.s3t">Verification</strong><small data-i18n="system.s3d">LIVE stays distinct from SIM and invalid evidence fails closed.</small></li>
+          <li><span>04</span><strong data-i18n="system.s4t">Paid invoke</strong><small data-i18n="system.s4d">Agents and apps buy one capability call.</small></li>
+          <li><span>05</span><strong data-i18n="system.s5t">Verified settlement</strong><small data-i18n="system.s5d">Valid result → pay; fault → refund; silence → $0.</small></li>
+          <li><span>06</span><strong data-i18n="system.s6t">Vertical product</strong><small data-i18n="system.s6d">A builder turns the receipt-backed fact into a decision.</small></li>
+        </ol>
+        <div class="leverage-grid reveal">
+          <div><strong data-i18n="system.m1t">Per-reading attestation</strong><span data-i18n="system.m1d">Auditability and fewer provenance disputes.</span></div>
+          <div><strong data-i18n="system.m2t">Pay-on-Verified</strong><span data-i18n="system.m2d">Buyers pay for usable results, not failed delivery.</span></div>
+          <div><strong data-i18n="system.m3t">Shared capabilities</strong><span data-i18n="system.m3d">New products reuse identity, verification, billing, and receipts.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ONBOARDING -->
+    <section id="onboard">
+      <div class="wrap">
+        <p class="sec-label reveal" data-i18n="ob.label">Practical paths</p>
+        <h2 class="sec-title reveal" data-i18n="ob.title">Pick a door. Three steps. Live links.</h2>
+        <p class="sec-sub reveal" data-i18n="ob.sub">One path. No monorepo tour. Finish in minutes.</p>
+
+        <div class="ob-tabs reveal" role="tablist" aria-label="Onboarding paths" data-i18n-aria-label="aria.onboardPaths">
+          <button id="ob-tab-see" type="button" class="ob-tab is-active" role="tab" data-path="see" aria-selected="true" aria-controls="ob-panel-see" tabindex="0" data-i18n="ob.tab.see">See</button>
+          <button id="ob-tab-buy" type="button" class="ob-tab" role="tab" data-path="buy" aria-selected="false" aria-controls="ob-panel-buy" tabindex="-1" data-i18n="ob.tab.buy">Buy</button>
+          <button id="ob-tab-publish" type="button" class="ob-tab" role="tab" data-path="publish" aria-selected="false" aria-controls="ob-panel-publish" tabindex="-1" data-i18n="ob.tab.publish">Publish</button>
+          <button id="ob-tab-build" type="button" class="ob-tab" role="tab" data-path="build" aria-selected="false" aria-controls="ob-panel-build" tabindex="-1" data-i18n="ob.tab.build">Build</button>
+          <button id="ob-tab-invest" type="button" class="ob-tab" role="tab" data-path="invest" aria-selected="false" aria-controls="ob-panel-invest" tabindex="-1" data-i18n="ob.tab.invest">Invest</button>
+        </div>
+
+        <!-- SEE -->
+        <div id="ob-panel-see" class="ob-panel is-active reveal" data-panel="see" role="tabpanel" aria-labelledby="ob-tab-see">
+          <p class="ob-who" data-i18n="ob.see.who">For humans who want honesty on a map — not another dashboard.</p>
+          <ol class="ob-steps">
+            <li>
+              <span class="ob-n">01</span>
+              <div>
+                <strong data-i18n="ob.see.s1t">Open ATLAS</strong>
+                <p data-i18n="ob.see.s1d">Planetary glass. Pins are LIVE or SIM — never mixed without a badge.</p>
+                <a class="btn btn-live" href="https://atlas.modelmarket.dev" target="_blank" rel="noopener" data-i18n="ob.see.s1a">Open ATLAS</a>
+              </div>
+            </li>
+            <li>
+              <span class="ob-n">02</span>
+              <div>
+                <strong data-i18n="ob.see.s2t">Choose a live scenario</strong>
+                <p data-i18n="ob.see.s2d">Open a focused ATLAS view, then inspect the callable watchbox product that evaluates a bbox and layers.</p>
+                <div class="ob-scenario-actions">
+                  <a class="btn btn-fire" href="https://atlas.modelmarket.dev/?layers=fire,weather" target="_blank" rel="noopener" data-i18n="ob.see.fire">Fire + weather</a>
+                  <a class="btn btn-signal" href="ideas.html?v=20260818b&amp;id=verified-watchbox" data-i18n="ob.see.watchbox">Verified watchbox</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <span class="ob-n">03</span>
+              <div>
+                <strong data-i18n="ob.see.s3t">Inspect one pin</strong>
+                <p data-i18n="ob.see.s3d">device_id, signature, seq — the receipt behind the glass.</p>
+                <a class="btn btn-ghost" href="https://iot.modelmarket.dev" target="_blank" rel="noopener" data-i18n="ob.see.s3a">Open GAIA fleet</a>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <!-- BUY -->
+        <div id="ob-panel-buy" class="ob-panel reveal" data-panel="buy" role="tabpanel" aria-labelledby="ob-tab-buy" hidden>
+          <p class="ob-who" data-i18n="ob.buy.who">For agents and apps that buy attested readings — pay-per-call.</p>
+          <ol class="ob-steps">
+            <li>
+              <span class="ob-n">01</span>
+              <div>
+                <strong data-i18n="ob.buy.s1t">Discover on Hub</strong>
+                <p data-i18n="ob.buy.s1d">Find gaia.weather.read@v1 (and air / energy). Price is micro.</p>
+                <a class="btn btn-live" href="https://modelmarket.dev" target="_blank" rel="noopener" data-i18n="ob.buy.s1a">Open Hub</a>
+              </div>
+            </li>
+            <li>
+              <span class="ob-n">02</span>
+              <div>
+                <strong data-i18n="ob.buy.s2t">Invoke · get a receipt</strong>
+                <p data-i18n="ob.buy.s2d">Pay-on-Verified: honest → pay · fault → refund · silence → $0.</p>
+                <a class="btn btn-ghost" href="https://iot.modelmarket.dev" target="_blank" rel="noopener" data-i18n="ob.buy.s2a">GAIA live</a>
+              </div>
+            </li>
+            <li>
+              <span class="ob-n">03</span>
+              <div>
+                <strong data-i18n="ob.buy.s3t">Settle only when honest</strong>
+                <p data-i18n="ob.buy.s3d">Bad data has an economic end. Keep the receipt for disputes.</p>
+                <a class="btn btn-ghost" href="#cases" data-i18n="ob.buy.s3a">See use cases</a>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <!-- PUBLISH -->
+        <div id="ob-panel-publish" class="ob-panel reveal" data-panel="publish" role="tabpanel" aria-labelledby="ob-tab-publish" hidden>
+          <p class="ob-who" data-i18n="ob.publish.who">For providers: attested relays → GAIA capability → ATLAS LIVE pin.</p>
+          <ol class="ob-steps">
+            <li>
+              <span class="ob-n">01</span>
+              <div>
+                <strong data-i18n="ob.publish.s1t">Understand the path</strong>
+                <p data-i18n="ob.publish.s1d">Relay signs readings (Ed25519) with seq. You are a provider — not “plug USB and forget.”</p>
+                <a class="btn btn-live" href="#sensors" data-i18n="ob.publish.s1a">Sensor path</a>
+              </div>
+            </li>
+            <li>
+              <span class="ob-n">02</span>
+              <div>
+                <strong data-i18n="ob.publish.s2t">Add a sensor (known kind)</strong>
+                <p data-i18n-html="ob.publish.s2d">Use the add-sensor guide when the kind already exists in GAIA. LIVE needs a provenance <code>source</code>.</p>
+                <a class="btn btn-ghost" href="https://github.com/alexar76/gaia" target="_blank" rel="noopener" data-i18n="ob.publish.s2a">GAIA on GitHub</a>
+              </div>
+            </li>
+            <li>
+              <span class="ob-n">03</span>
+              <div>
+                <strong data-i18n="ob.publish.s3t">List · earn on Hub</strong>
+                <p data-i18n="ob.publish.s3d">Agents buy the invoke. Humans see the LIVE pin on ATLAS.</p>
+                <a class="btn btn-ghost" href="#boards" data-i18n="ob.publish.s3a">Publisher kit idea</a>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <!-- BUILD -->
+        <div id="ob-panel-build" class="ob-panel reveal" data-panel="build" role="tabpanel" aria-labelledby="ob-tab-build" hidden>
+          <p class="ob-who" data-i18n="ob.build.who">For builders shipping a thin entry product on attested rails.</p>
+          <ol class="ob-steps">
+            <li>
+              <span class="ob-n">01</span>
+              <div>
+                <strong data-i18n="ob.build.s1t">Pick one idea</strong>
+                <p data-i18n="ob.build.s1d">Weather Risk Analyst first — then parametric, cold-chain, export API… Status chips are honest.</p>
+                <a class="btn btn-live" href="#boards" data-i18n="ob.build.s1a">Build board</a>
+              </div>
+            </li>
+            <li>
+              <span class="ob-n">02</span>
+              <div>
+                <strong data-i18n="ob.build.s2t">Touch the entry product</strong>
+                <p data-i18n="ob.build.s2d">Open Weather Risk — live Hub → GAIA → ATLAS path. Rails ship today; the product layer is what you build.</p>
+                <a class="btn btn-live" href="ideas.html?v=20260818b&amp;id=weather-risk" data-i18n="ob.build.s2a">Open Weather Risk</a>
+                <a class="btn btn-ghost" href="BUILD-AUDIT.md" target="_blank" rel="noopener" data-i18n="ob.build.s2b" style="margin-left:8px">Engineering notes</a>
+              </div>
+            </li>
+            <li>
+              <span class="ob-n">03</span>
+              <div>
+                <strong data-i18n="ob.build.s3t">Touch the rails</strong>
+                <p data-i18n="ob.build.s3d">ATLAS for humans · GAIA for readings · Hub for pay-per-call.</p>
+                <a class="btn btn-ghost" href="#rails" data-i18n="ob.build.s3a">Live rails</a>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <!-- INVEST -->
+        <div id="ob-panel-invest" class="ob-panel reveal" data-panel="invest" role="tabpanel" aria-labelledby="ob-tab-invest" hidden>
+          <p class="ob-who" data-i18n="ob.invest.who">For micro-investors and angels — orientation, not a prospectus.</p>
+          <ol class="ob-steps">
+            <li>
+              <span class="ob-n">01</span>
+              <div>
+                <strong data-i18n="ob.invest.s1t">Touch the product</strong>
+                <p data-i18n="ob.invest.s1d">Open ATLAS and GAIA before any slide. Rails are live.</p>
+                <a class="btn btn-live" href="https://atlas.modelmarket.dev" target="_blank" rel="noopener" data-i18n="ob.invest.s1a">Open ATLAS</a>
+              </div>
+            </li>
+            <li>
+              <span class="ob-n">02</span>
+              <div>
+                <strong data-i18n="ob.invest.s2t">Read the intro</strong>
+                <p data-i18n="ob.invest.s2d">Approximate adjacent markets + named sources. Disclaimer first.</p>
+                <a class="btn btn-ghost" href="#investors" data-i18n="ob.invest.s2a">Investor article</a>
+              </div>
+            </li>
+            <li>
+              <span class="ob-n">03</span>
+              <div>
+                <strong data-i18n="ob.invest.s3t">Stay on the product</strong>
+                <p data-i18n="ob.invest.s3d">Open ATLAS, GAIA, and Hub. Serious conversations follow from what already ships.</p>
+                <a class="btn btn-ghost" href="#investors" data-i18n="ob.invest.s3a">Back to sources</a>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- RAILS -->
+    <section id="rails">
+      <div class="wrap">
+        <p class="sec-label reveal" data-i18n="rails.label">Live today</p>
+        <h2 class="sec-title reveal" data-i18n="rails.title">The rails — not slideware</h2>
+        <p class="sec-sub reveal" data-i18n="rails.sub">Open any surface. Touch the economy. Crypto-optional.</p>
+        <div class="rails reveal">
+          <a class="rail" href="https://iot.modelmarket.dev" target="_blank" rel="noopener"><b>GAIA</b><span data-i18n="rail.gaia">Ed25519 IoT readings · weather / air / energy</span></a>
+          <a class="rail" href="https://atlas.modelmarket.dev" target="_blank" rel="noopener"><b>ATLAS</b><span data-i18n="rail.atlas">LIVE vs SIM planetary glass</span></a>
+          <a class="rail" href="https://modelmarket.dev" target="_blank" rel="noopener"><b>Hub</b><span data-i18n="rail.hub">Discover · publish · pay-per-call</span></a>
+          <a class="rail" href="https://oracles.modelmarket.dev" target="_blank" rel="noopener"><b>Oracles</b><span data-i18n="rail.oracles">Signed math · MCP</span></a>
+          <a class="rail" href="https://metis.modelmarket.dev" target="_blank" rel="noopener"><b>Metis</b><span data-i18n="rail.metis">LLM verify layer</span></a>
+          <a class="rail" href="https://magic-ai-factory.com" target="_blank" rel="noopener"><b>Factory</b><span data-i18n="rail.factory">Demand agents · operator glass</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- USE CASES — six clickable cards -->
+    <section id="cases">
+      <div class="wrap">
+        <p class="sec-label reveal" data-i18n="cases.label">Use cases</p>
+        <h2 class="sec-title reveal" data-i18n="cases.title">What the ecosystem already feels like</h2>
+        <p class="sec-sub reveal" data-i18n="cases.sub">One job per card. Live link. No monorepo pitch.</p>
+        <div class="featured-cases reveal">
+          <a class="featured-case featured-case--fire" href="ideas.html?v=20260818b&amp;id=fire-hotspot">
+            <div class="featured-case-scene" aria-hidden="true">
+              <span class="fire-orbit"></span><span class="fire-core"></span><span class="weather-stream weather-stream--one"></span><span class="weather-stream weather-stream--two"></span>
+            </div>
+            <div class="featured-case-copy">
+              <div class="featured-case-meta"><span class="live-dot"></span><span data-i18n="featured.fire.status">BUILD-READY · LIVE RAILS</span></div>
+              <h3 data-i18n="idea.fire-hotspot.title">Fire + Weather Evidence Snapshot</h3>
+              <p data-i18n="featured.fire.body">NASA FIRMS thermal-anomaly detections plus bounded nearby LIVE weather context, source citations, limitations, and a receipt.</p>
+              <div class="featured-case-result"><span data-i18n="featured.result">WHAT YOU GET</span><b data-i18n="featured.fire.result">detections + bounded context + receipt</b></div>
+              <span class="featured-case-go" data-i18n="featured.fire.cta">Explore the live path →</span>
+            </div>
+          </a>
+          <a class="featured-case featured-case--watchbox" href="ideas.html?v=20260818b&amp;id=verified-watchbox">
+            <div class="featured-case-scene" aria-hidden="true">
+              <span class="radar-grid"></span><span class="radar-sweep"></span><span class="signal-node signal-node--one"></span><span class="signal-node signal-node--two"></span><span class="signal-node signal-node--three"></span>
+            </div>
+            <div class="featured-case-copy">
+              <div class="featured-case-meta"><span class="signal-dot"></span><span data-i18n="featured.watchbox.status">CALLABLE SKU · AGENT-READY</span></div>
+              <h3 data-i18n="idea.verified-watchbox.title">ATLAS Verified Watchbox</h3>
+              <p data-i18n="featured.watchbox.body">One bbox and layer set returns current matches, explicit LIVE/SIM flags, coverage boundaries, and a content receipt.</p>
+              <div class="featured-case-result"><span data-i18n="featured.result">WHAT YOU GET</span><b data-i18n="featured.watchbox.result">matches + mode + receipt</b></div>
+              <span class="featured-case-go" data-i18n="featured.watchbox.cta">Inspect the callable SKU →</span>
+            </div>
+          </a>
+          <a class="featured-case featured-case--flood" href="ideas.html?v=20260818b&amp;id=flood-hydrology">
+            <div class="featured-case-scene" aria-hidden="true">
+              <span class="flood-basin"></span><span class="flood-wave flood-wave--one"></span><span class="flood-wave flood-wave--two"></span><span class="gauge-pin gauge-pin--one"></span><span class="gauge-pin gauge-pin--two"></span>
+            </div>
+            <div class="featured-case-copy">
+              <div class="featured-case-meta"><span class="flood-dot"></span><span data-i18n="featured.flood.status">BUILD-READY · LIVE RAILS</span></div>
+              <h3 data-i18n="idea.flood-hydrology.title">Flood Hydrology Evidence</h3>
+              <p data-i18n="featured.flood.body">US NWS flood alerts plus river gauges in a bbox, hydrology pairing, citations, and a receipt. Not a flood model or parametric quote.</p>
+              <div class="featured-case-result"><span data-i18n="featured.result">WHAT YOU GET</span><b data-i18n="featured.flood.result">alerts + gauges + pairing + receipt</b></div>
+              <span class="featured-case-go" data-i18n="featured.flood.cta">Explore the hydrology path →</span>
+            </div>
+          </a>
+        </div>
+        <div class="grid">
+          <a class="card tilt reveal" href="https://atlas.modelmarket.dev" target="_blank" rel="noopener">
+            <div class="card-media"><img src="assets/atlas-hero-orbit.png" alt="" width="640" height="400" loading="lazy"></div>
+            <div class="card-body">
+              <span class="card-tag" data-i18n="case1.tag">Human glass</span>
+              <h3 data-i18n="case1.h3">See attested pins — LIVE vs SIM</h3>
+              <p data-i18n="case1.p">Humans get honesty on the map. Agents buy the reading behind the pin.</p>
+              <span class="card-link" data-i18n="case1.link">Open ATLAS</span>
+            </div>
+          </a>
+          <a class="card tilt reveal" href="https://modelmarket.dev" target="_blank" rel="noopener">
+            <div class="card-media"><img src="assets/live-weather.png" alt="" width="640" height="400" loading="lazy"></div>
+            <div class="card-body">
+              <span class="card-tag" data-i18n="case2.tag">Physical oracle</span>
+              <h3 data-i18n="case2.h3">Buy a weather reading for ~$0.001</h3>
+              <p data-i18n="case2.p">Pay-on-Verified: honest → pay · fault → refund · silence → $0.</p>
+              <span class="card-link" data-i18n="case2.link">Open Hub</span>
+            </div>
+          </a>
+          <a class="card tilt reveal" href="https://atlas.modelmarket.dev" target="_blank" rel="noopener">
+            <div class="card-media"><img src="assets/live-station-card.png" alt="" width="640" height="400" loading="lazy"></div>
+            <div class="card-body">
+              <span class="card-tag" data-i18n="case3.tag">Layers</span>
+              <h3 data-i18n="case3.h3">Weather · air · energy on one wall</h3>
+              <p data-i18n="case3.p">Same rails. Different capabilities. Cinema of the fact, not a dashboard collage.</p>
+              <span class="card-link" data-i18n="case3.link">Open layers</span>
+            </div>
+          </a>
+          <a class="card card--settlement tilt reveal" href="https://github.com/alexar76/gaia" target="_blank" rel="noopener">
+            <div class="card-media card-media--settlement">
+              <div class="settlement-flow" role="img" data-i18n-aria-label="case4.flow.aria">
+                <strong class="settlement-flow-title" data-i18n="case4.flow.title">GAIA reading → Pay-on-Verified settlement</strong>
+                <ol>
+                  <li data-step="source">
+                    <strong data-i18n="case4.flow.sensor">Sensor</strong>
+                    <span data-i18n="case4.flow.sensorDetail">physical reading</span>
+                  </li>
+                  <li data-step="sign">
+                    <strong data-i18n="case4.flow.sign">Sign</strong>
+                    <span data-i18n="case4.flow.signDetail">Ed25519 device key</span>
+                  </li>
+                  <li data-step="invoke">
+                    <strong data-i18n="case4.flow.invoke">Invoke</strong>
+                    <span data-i18n="case4.flow.invokeDetail">funds held by Hub</span>
+                  </li>
+                  <li data-step="verify">
+                    <strong data-i18n="case4.flow.verify">Verify</strong>
+                    <span data-i18n="case4.flow.verifyDetail">GAIA /v1/verify</span>
+                  </li>
+                  <li data-step="settle">
+                    <strong data-i18n="case4.flow.settle">Settle</strong>
+                    <span data-i18n="case4.flow.settleDetail">capture or refund</span>
+                  </li>
+                </ol>
+                <span class="settlement-flow-note" data-i18n="case4.flow.note">The result returns immediately · money moves only after the verdict</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <span class="card-tag" data-i18n="case4.tag">Settlement</span>
+              <h3 data-i18n="case4.h3">Physics as the escrow judge</h3>
+              <p data-i18n="case4.p">Money moves when the attestation clears. Bad data has an economic end.</p>
+              <span class="card-link" data-i18n="case4.link">GAIA on GitHub</span>
+            </div>
+          </a>
+          <a class="card tilt reveal" href="https://magic-ai-factory.com/monitor/" target="_blank" rel="noopener">
+            <div class="card-media"><img src="assets/monitor.png" alt="" width="640" height="400" loading="lazy"></div>
+            <div class="card-body">
+              <span class="card-tag" data-i18n="case5.tag">Operator</span>
+              <h3 data-i18n="case5.h3">Economy as a place you can walk</h3>
+              <p data-i18n="case5.p">Factory + Monitor — demand agents and topology, not another chat UI.</p>
+              <span class="card-link" data-i18n="case5.link">Open Monitor</span>
+            </div>
+          </a>
+          <a class="card tilt reveal" href="https://iot.modelmarket.dev" target="_blank" rel="noopener">
+            <div class="card-media"><img src="assets/06-live-demo.png" alt="" width="640" height="400" loading="lazy"></div>
+            <div class="card-body">
+              <span class="card-tag" data-i18n="case6.tag">Provenance</span>
+              <h3 data-i18n="case6.h3">One station · full receipt</h3>
+              <p data-i18n="case6.p">device_id, signature, seq — the discipline an insight product should keep.</p>
+              <span class="card-link" data-i18n="case6.link">Inspect fleet</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPPORTUNITY MAP — potential products grouped into 7 system directions -->
+    <section id="boards">
+      <div class="wrap">
+        <p class="sec-label reveal" data-i18n="boards.label">Opportunity map</p>
+        <h2 class="sec-title reveal" data-i18n="boards.title">Potential products on shared rails</h2>
+        <p class="sec-sub reveal" data-i18n="boards.sub">A catalog of what developers could build and investors can evaluate. Status shows evidence maturity — not market size.</p>
+        <div class="maturity-legend reveal" aria-label="Idea maturity">
+          <div><span class="chip chip-live" data-i18n="chip.liveSurface">live surface</span><p data-i18n="maturity.live">A product or callable surface operates now.</p></div>
+          <div><span class="chip chip-live" data-i18n="chip.live">build-ready</span><p data-i18n="maturity.ready">Shared rails exist; a focused application layer remains.</p></div>
+          <div><span class="chip chip-partner" data-i18n="chip.example">example desk</span><p data-i18n="maturity.example">A third-party desk that already buys live SKUs — not a first-party product.</p></div>
+          <div><span class="chip chip-partner" data-i18n="chip.partner">design partner</span><p data-i18n="maturity.partner">The path needs domain validation with a partner.</p></div>
+          <div><span class="chip chip-idea" data-i18n="chip.idea">hypothesis</span><p data-i18n="maturity.idea">A possible application that still needs demand evidence.</p></div>
+        </div>
+        <div id="boards-root"></div>
+      </div>
+    </section>
+
+    <!-- SENSORS -->
+    <section id="sensors">
+      <div class="wrap">
+        <p class="sec-label reveal" data-i18n="sensors.label">Publish → read</p>
+        <h2 class="sec-title reveal" data-i18n="sensors.title">Can people connect sensors and read them through GAIA?</h2>
+        <p class="sec-sub reveal" data-i18n-html="sensors.sub">Yes — as <strong>providers</strong> of attested relays, not “plug any USB and forget.”</p>
+        <div class="path reveal">
+          <div class="path-step"><div class="path-n">01</div><strong data-i18n="sensors.s1t">Relay / device</strong><span data-i18n="sensors.s1d">Signs readings (Ed25519) with seq</span></div>
+          <div class="path-step"><div class="path-n">02</div><strong data-i18n="sensors.s2t">GAIA</strong><span data-i18n="sensors.s2d">Capability e.g. gaia.weather.read@v1</span></div>
+          <div class="path-step"><div class="path-n">03</div><strong data-i18n="sensors.s3t">Hub</strong><span data-i18n="sensors.s3d">Agents / apps buy the invoke</span></div>
+          <div class="path-step"><div class="path-n">04</div><strong data-i18n="sensors.s4t">ATLAS</strong><span data-i18n="sensors.s4d">LIVE pin for humans</span></div>
+        </div>
+        <p class="note reveal" style="margin-top:22px" data-i18n="sensors.note">Self-hosted (MIT) or use hosted surfaces. Demo fleet ≠ mass plug-and-play for every chip yet — the product path is clear.</p>
+      </div>
+    </section>
+
+    <!-- INVESTORS -->
+    <section id="investors">
+      <div class="wrap">
+        <p class="sec-label reveal" data-i18n="inv.label">For micro-investors &amp; angels</p>
+        <h2 class="sec-title reveal" data-i18n="inv.title">Introduction with prospects</h2>
+        <p class="sec-sub reveal" data-i18n="inv.sub">Short narrative. Approximate market context. Sources named. Not a prospectus.</p>
+
+        <div class="economics-lab reveal">
+          <div class="economics-copy">
+            <p class="economics-kicker" data-i18n="econ.label">INTERACTIVE UNIT ECONOMICS</p>
+            <h3 data-i18n="econ.title">See how a micro-call becomes a market.</h3>
+            <p data-i18n="econ.sub">Change every assumption. This is a transparent model, not a revenue forecast.</p>
+            <div class="live-fleet-metrics" aria-label="Live fleet metrics" data-i18n-aria-label="econ.liveAria">
+              <div><strong id="metric-live">—</strong><span data-i18n="econ.metric.live">LIVE pins</span></div>
+              <div><strong id="metric-stations">—</strong><span data-i18n="econ.metric.stations">stations</span></div>
+              <div><strong id="metric-layers">—</strong><span data-i18n="econ.metric.layers">layers</span></div>
+              <small id="metric-updated" data-i18n="econ.metric.connecting">Connecting to ATLAS</small>
+            </div>
+          </div>
+          <div class="economics-controls">
+            <label><span data-i18n="econ.buyers">Active buyers</span><output id="econ-buyers-out">100</output><input id="econ-buyers" type="range" min="10" max="1000" step="10" value="100"></label>
+            <label><span data-i18n="econ.calls">Calls per buyer / day</span><output id="econ-calls-out">1,000</output><input id="econ-calls" type="range" min="100" max="10000" step="100" value="1000"></label>
+            <label><span data-i18n="econ.price">Price per call</span><output id="econ-price-out">$0.001</output><input id="econ-price" type="range" min="1" max="30" step="1" value="1"></label>
+            <label><span data-i18n="econ.take">Platform share</span><output id="econ-take-out">30%</output><input id="econ-take" type="range" min="10" max="50" step="5" value="30"></label>
+          </div>
+          <div class="economics-results">
+            <div class="economics-volume"><span data-i18n="econ.volume">DAILY VOLUME</span><strong id="econ-volume">100,000</strong><small data-i18n="econ.invokes">invokes</small></div>
+            <div><span data-i18n="econ.gmv">MONTHLY CALL VALUE</span><strong id="econ-gmv">$3,000</strong></div>
+            <div><span data-i18n="econ.providers">PROVIDER EARNINGS</span><strong id="econ-providers">$2,100</strong></div>
+            <div><span data-i18n="econ.platform">PLATFORM GROSS SHARE</span><strong id="econ-platform">$900</strong></div>
+            <p data-i18n="econ.note">Illustration before infrastructure, verification, support, tax, and acquisition costs. No forecast or promised return.</p>
+          </div>
+        </div>
+
+        <article class="article reveal">
+          <div class="disclaimer" data-i18n-html="inv.disclaimer">
+            <strong>Disclaimer.</strong> Figures below are <em>approximate</em> third-party industry estimates for <em>adjacent</em> markets — not AIMarket revenue, ARR, or a promise of capture. Methodologies differ across firms (sometimes by an order of magnitude). Treat as orientation for the room; verify primary reports before diligence. This page is not an offer to sell securities.
+          </div>
+
+          <h2 data-i18n="inv.h2">Verifiable provenance → agent economy → vertical products</h2>
+          <p data-i18n-html="inv.p1">The system preserves <strong>who produced a result, from which source, under which checks</strong>. Agents can buy one capability call; payment eligibility follows the declared verification policy.</p>
+          <p data-i18n="inv.p2">We already ship GAIA (attested IoT), Pay-on-Verified, ATLAS (LIVE vs SIM), Hub, oracles, and operator glass — live URLs above. Capital accelerates volume on those rails and thin entry products into verticals that already spend on physical-world data.</p>
+
+          <h3 data-i18n="inv.h3door">Why the door is open</h3>
+          <p data-i18n="inv.pdoor">Incumbents sell forecasts and dashboards. Gaps we productize: per-reading attestation, agent-native micro-billing, economic end for bad data (refund / silence), and honest LIVE vs SIM for humans.</p>
+
+          <h3 data-i18n="inv.h3tam">Adjacent spend (illustrative ranges)</h3>
+          <table>
+            <thead>
+              <tr>
+                <th data-i18n="inv.th1">Vertical</th>
+                <th data-i18n="inv.th2">Approx. industry range</th>
+                <th data-i18n="inv.th3">Our path (not claimed share)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-i18n="inv.r1a">Parametric insurance</td>
+                <td data-i18n="inv.r1b">~$15–25B class mid-decade (varies widely by report)</td>
+                <td data-i18n="inv.r1c">Oracle input → threshold → partner payout</td>
+              </tr>
+              <tr>
+                <td data-i18n="inv.r2a">Supply-chain visibility / SCM</td>
+                <td data-i18n="inv.r2b">Visibility software ~low–mid $B; broader SCM tens of $B</td>
+                <td data-i18n="inv.r2c">Attested evidence streams · ATLAS wall</td>
+              </tr>
+              <tr>
+                <td data-i18n="inv.r3a">Energy / grid digital</td>
+                <td data-i18n="inv.r3b">Large fragmented (intensity, DR, metering) — treat as $10B+ opportunity class</td>
+                <td><code>energy.read</code> / <span data-i18n="inv.r3c">grid signals</span></td>
+              </tr>
+              <tr>
+                <td data-i18n="inv.r4a">Compliance / reporting tech</td>
+                <td data-i18n="inv.r4b">Broad GRC/ESG tooling often cited in tens of $B</td>
+                <td data-i18n="inv.r4c">Signed packs · export APIs</td>
+              </tr>
+              <tr>
+                <td data-i18n="inv.r5a">Prediction / event markets</td>
+                <td data-i18n="inv.r5b">Fast-moving; often cited ~$10B+ opportunity narratives</td>
+                <td data-i18n="inv.r5c">Physical resolution oracle</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="note" data-i18n-html="inv.tamNote">These are <strong>input markets</strong> apps plug into — not our booked ARR.</p>
+
+          <h3 data-i18n="inv.h3src">Sources (start here — confirm in originals)</h3>
+          <ul class="sources">
+            <li>
+              <span data-i18n="inv.src1">Parametric insurance growth commentary citing Global Market Insights / Allied Market Research / Market.US ranges — Society of Actuaries overview: SOA (Jan 2026). Note: SOA authors stress veracity of marketing-research projections varies.</span>
+              <a href="https://www.soa.org/communities/general-insurance/newsletter-articles/2026/january/2026-01-gi-cappelletti2/" target="_blank" rel="noopener">SOA</a>
+            </li>
+            <li>
+              <span data-i18n="inv.src2">Parametric market sizing examples: Mordor Intelligence (different definition → much smaller $B) vs broader premium narratives — use the spread as a caution.</span>
+              <a href="https://www.mordorintelligence.com/industry-reports/parametric-insurance-market" target="_blank" rel="noopener">Mordor</a>
+            </li>
+            <li>
+              <span data-i18n="inv.src3">Supply chain visibility software: Future Market Insights (~$3.5B in 2026 → ~$12B by 2036 class).</span>
+              <a href="https://www.futuremarketinsights.com/reports/supply-chain-visibility-software-market" target="_blank" rel="noopener">FMI</a>
+            </li>
+            <li>
+              <span data-i18n="inv.src4">Broader supply chain management: Grand View Research (SCM ~$26B in 2024 → ~$49B by 2030 class).</span>
+              <a href="https://www.grandviewresearch.com/industry-analysis/supply-chain-management-market-report" target="_blank" rel="noopener">Grand View</a>
+            </li>
+            <li>
+              <span data-i18n="inv.src5">Live product surfaces (primary, not TAM): GAIA · ATLAS · Hub.</span>
+              <a href="https://iot.modelmarket.dev" target="_blank" rel="noopener">GAIA</a>
+              · <a href="https://atlas.modelmarket.dev" target="_blank" rel="noopener">ATLAS</a>
+              · <a href="https://modelmarket.dev" target="_blank" rel="noopener">Hub</a>
+            </li>
+          </ul>
+
+          <h3 data-i18n="inv.h3buy">What investors are buying</h3>
+          <p data-i18n-html="inv.pbuy">Category ownership of <strong>agent-native physical oracle + settlement</strong> — with a map into insurance, supply chain, energy, compliance, and insight agents. We do not need to be the insurer on day one.</p>
+          <p data-i18n="inv.pdata">Diligence starts from the live rails and named sources on this page — not an offline pack.</p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <div class="wrap">
+        <div><strong>AIMarket</strong> · portal · <span id="year"></span></div>
+        <div data-i18n="foot.line">Point your domain at /portal · MIT surfaces · crypto optional</div>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="js/i18n.js?v=20260818b"></script>
+  <script type="module" src="js/onboard.js?v=20260818b"></script>
+  <script type="module" src="js/boards.js?v=20260818b"></script>
+  <script type="module" src="js/scene.js?v=20260818b"></script>
+  <script type="module" src="js/proof.js?v=20260813i"></script>
+  <script type="module" src="js/main.js?v=20260818b"></script>
+</body>
+</html>

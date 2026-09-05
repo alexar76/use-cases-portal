@@ -1,0 +1,971 @@
+{
+  "boards": [
+    {
+      "id": "physical",
+      "scene": "globe",
+      "accent": "#3de0c5",
+      "ideas": [
+        "fire-hotspot",
+        "verified-watchbox",
+        "emberline-desk",
+        "flood-hydrology",
+        "nordic-ais",
+        "tsunami-cap",
+        "cyclone-watch",
+        "adsb-overflight",
+        "campus-nowcast",
+        "weather-risk",
+        "situation-brief",
+        "nearest-read",
+        "gnss-jamming-alert",
+        "sensor-publisher",
+        "parametric-trigger",
+        "evidence-export",
+        "geomag-window",
+        "pv-irradiance-record",
+        "smoke-operations",
+        "desk-presets",
+        "route-integrity",
+        "observability-attest"
+      ]
+    },
+    {
+      "id": "marketplace",
+      "scene": "hex",
+      "accent": "#60a5fa",
+      "ideas": [
+        "capability-15",
+        "hub-embed"
+      ]
+    },
+    {
+      "id": "safety",
+      "scene": "shield",
+      "accent": "#f0c14a",
+      "ideas": [
+        "warden-mcp"
+      ]
+    },
+    {
+      "id": "verify",
+      "scene": "star",
+      "accent": "#a78bfa",
+      "ideas": [
+        "metis-answers",
+        "awr-receipts"
+      ]
+    },
+    {
+      "id": "factory",
+      "scene": "blocks",
+      "accent": "#34d399",
+      "ideas": [
+        "factory-oneshot"
+      ]
+    },
+    {
+      "id": "oracles",
+      "scene": "platonic",
+      "accent": "#f472b6",
+      "ideas": [
+        "fair-draw"
+      ]
+    },
+    {
+      "id": "ops",
+      "scene": "radar",
+      "accent": "#fb7185",
+      "ideas": [
+        "momus-gate"
+      ]
+    }
+  ],
+  "ideas": {
+    "weather-risk": {
+      "chip": "live-wedge",
+      "scene": "storm",
+      "accent": "#3de0c5",
+      "cta": "https://modelmarket.dev",
+      "ctaKey": "touchWeather",
+      "rails": [
+        "GAIA",
+        "ATLAS",
+        "Hub"
+      ],
+      "livePath": [
+        {
+          "key": "idea.weather-risk.step1",
+          "href": "https://modelmarket.dev"
+        },
+        {
+          "key": "idea.weather-risk.step2",
+          "href": "https://iot.modelmarket.dev"
+        },
+        {
+          "key": "idea.weather-risk.step3",
+          "href": "https://atlas.modelmarket.dev"
+        }
+      ],
+      "demo": {
+        "capabilityId": "gaia.weather.read@v1",
+        "priceUsd": "0.001",
+        "source": "GAIA selected weather relay"
+      }
+    },
+    "sensor-publisher": {
+      "chip": "live-rails",
+      "scene": "pins",
+      "accent": "#3de0c5",
+      "cta": "https://atlas.modelmarket.dev",
+      "ctaKey": "touchPublisher",
+      "rails": [
+        "GAIA",
+        "ATLAS",
+        "Hub"
+      ],
+      "livePath": [
+        {
+          "key": "idea.sensor-publisher.step1",
+          "href": "https://atlas.modelmarket.dev"
+        },
+        {
+          "key": "idea.sensor-publisher.step2",
+          "href": "https://iot.modelmarket.dev"
+        },
+        {
+          "key": "idea.sensor-publisher.step3",
+          "href": "https://modelmarket.dev"
+        }
+      ]
+    },
+    "fire-hotspot": {
+      "chip": "live-wedge",
+      "scene": "storm",
+      "accent": "#f97316",
+      "cta": "https://atlas.modelmarket.dev/?layers=fire,weather",
+      "ctaKey": "touchFire",
+      "rails": [
+        "GAIA",
+        "ATLAS",
+        "Hub"
+      ],
+      "livePath": [
+        {
+          "key": "idea.fire-hotspot.step1",
+          "href": "https://atlas.modelmarket.dev/?layers=fire,weather"
+        },
+        {
+          "key": "idea.fire-hotspot.step2",
+          "href": "https://atlas.modelmarket.dev/docs"
+        },
+        {
+          "key": "idea.fire-hotspot.step3",
+          "href": "https://modelmarket.dev"
+        }
+      ],
+      "demo": {
+        "capabilityId": "atlas.fire.weather@v1",
+        "priceUsd": "0.080",
+        "source": "NASA FIRMS and/or Copernicus EFFIS + bounded GAIA weather context"
+      },
+      "sources": [
+        {
+          "key": "idea.source.firmsMap",
+          "href": "https://firms.modaps.eosdis.nasa.gov/map/"
+        },
+        {
+          "key": "idea.source.firmsContext",
+          "href": "https://www.earthdata.nasa.gov/news/feature-articles/nasa-firms-helps-fight-wildland-fires-near-real-time"
+        },
+        {
+          "key": "idea.source.atlasDocs",
+          "href": "https://atlas.modelmarket.dev/docs"
+        },
+        {
+          "key": "idea.source.emberlineDesk",
+          "href": "https://emberlinedesk.com/"
+        }
+      ]
+    },
+    "verified-watchbox": {
+      "chip": "live-wedge",
+      "scene": "radar",
+      "accent": "#22d3ee",
+      "cta": "https://atlas.modelmarket.dev/docs",
+      "ctaKey": "touchWatchbox",
+      "rails": [
+        "ATLAS",
+        "GAIA",
+        "Hub"
+      ],
+      "livePath": [
+        {
+          "key": "idea.verified-watchbox.step1",
+          "href": "https://atlas.modelmarket.dev"
+        },
+        {
+          "key": "idea.verified-watchbox.step2",
+          "href": "https://atlas.modelmarket.dev/docs"
+        },
+        {
+          "key": "idea.verified-watchbox.step3",
+          "href": "https://atlas.modelmarket.dev/api/v1/watchboxes"
+        }
+      ],
+      "demo": {
+        "capabilityId": "atlas.watchbox.check@v1",
+        "priceUsd": "0.020",
+        "source": "ATLAS LIVE fleet snapshot"
+      },
+      "sources": [
+        {
+          "key": "idea.source.atlasDocs",
+          "href": "https://atlas.modelmarket.dev/docs"
+        },
+        {
+          "key": "idea.source.emberlineDesk",
+          "href": "https://emberlinedesk.com/"
+        }
+      ]
+    },
+    "emberline-desk": {
+      "chip": "example",
+      "scene": "radar",
+      "accent": "#ea580c",
+      "cta": "https://emberlinedesk.com/",
+      "ctaKey": "openDesk",
+      "rails": [
+        "ATLAS",
+        "Hub"
+      ],
+      "livePath": [
+        {
+          "key": "idea.emberline-desk.step1",
+          "href": "https://emberlinedesk.com/sample"
+        },
+        {
+          "key": "idea.emberline-desk.step2",
+          "href": "https://emberlinedesk.com/"
+        },
+        {
+          "key": "idea.emberline-desk.step3",
+          "href": "ideas.html?v=20260818b&id=fire-hotspot"
+        }
+      ],
+      "sources": [
+        {
+          "key": "idea.source.emberlineDesk",
+          "href": "https://emberlinedesk.com/"
+        },
+        {
+          "key": "idea.source.fireHotspotSku",
+          "href": "ideas.html?v=20260818b&id=fire-hotspot"
+        },
+        {
+          "key": "idea.source.watchboxSku",
+          "href": "ideas.html?v=20260818b&id=verified-watchbox"
+        },
+        {
+          "key": "idea.source.atlasDocs",
+          "href": "https://atlas.modelmarket.dev/docs"
+        }
+      ]
+    },
+    "flood-hydrology": {
+      "chip": "live-wedge",
+      "scene": "storm",
+      "accent": "#38bdf8",
+      "cta": "https://atlas.modelmarket.dev/?layers=flood,river",
+      "ctaKey": "touchFlood",
+      "rails": [
+        "GAIA",
+        "ATLAS",
+        "Hub"
+      ],
+      "livePath": [
+        {
+          "key": "idea.flood-hydrology.step1",
+          "href": "https://atlas.modelmarket.dev/?layers=flood,river"
+        },
+        {
+          "key": "idea.flood-hydrology.step2",
+          "href": "https://atlas.modelmarket.dev/docs"
+        },
+        {
+          "key": "idea.flood-hydrology.step3",
+          "href": "https://modelmarket.dev"
+        }
+      ],
+      "demo": {
+        "capabilityId": "atlas.situation.brief@v1",
+        "priceUsd": "0.060",
+        "source": "ATLAS cited LIVE flood + river snapshot (US NWS CAP flood; not a flood model)"
+      },
+      "sources": [
+        {
+          "key": "idea.source.nwsAlerts",
+          "href": "https://www.weather.gov/documentation/services-web-alerts"
+        },
+        {
+          "key": "idea.source.atlasFlood",
+          "href": "https://atlas.modelmarket.dev/?layers=flood,river"
+        },
+        {
+          "key": "idea.source.atlasDocs",
+          "href": "https://atlas.modelmarket.dev/docs"
+        }
+      ]
+    },
+    "nordic-ais": {
+      "chip": "live-wedge",
+      "scene": "radar",
+      "accent": "#0891b2",
+      "cta": "https://atlas.modelmarket.dev/?layers=ais",
+      "ctaKey": "touchAis",
+      "rails": [
+        "GAIA",
+        "ATLAS",
+        "Hub"
+      ],
+      "livePath": [
+        {
+          "key": "idea.nordic-ais.step1",
+          "href": "https://atlas.modelmarket.dev/?layers=ais"
+        },
+        {
+          "key": "idea.nordic-ais.step2",
+          "href": "https://iot.modelmarket.dev"
+        },
+        {
+          "key": "idea.nordic-ais.step3",
+          "href": "https://modelmarket.dev"
+        }
+      ],
+      "demo": {
+        "capabilityId": "gaia.ais.public.read@v1",
+        "priceUsd": "0.002",
+        "source": "Fintraffic Digitraffic (CC BY 4.0, Finnish waters) + Kystverket/BarentsWatch (NLOD 2.0, Norwegian waters); each reading carries its own attribution; not own-edge AIS"
+      },
+      "sources": [
+        {
+          "key": "idea.source.digitraffic",
+          "href": "https://www.digitraffic.fi/en/terms-of-service/"
+        },
+        {
+          "key": "idea.source.atlasAis",
+          "href": "https://atlas.modelmarket.dev/?layers=ais"
+        }
+      ]
+    },
+    "tsunami-cap": {
+      "chip": "idea",
+      "scene": "storm",
+      "accent": "#e11d48",
+      "cta": "https://atlas.modelmarket.dev/?layers=tsunami",
+      "ctaKey": "touchTsunami",
+      "rails": [
+        "GAIA",
+        "ATLAS",
+        "Hub"
+      ],
+      "livePath": [
+        {
+          "key": "idea.tsunami-cap.step1",
+          "href": "https://atlas.modelmarket.dev/?layers=tsunami"
+        },
+        {
+          "key": "idea.tsunami-cap.step2",
+          "href": "https://iot.modelmarket.dev"
+        },
+        {
+          "key": "idea.tsunami-cap.step3",
+          "href": "https://modelmarket.dev"
+        }
+      ],
+      "sources": [
+        {
+          "key": "idea.source.nwsAlerts",
+          "href": "https://www.weather.gov/documentation/services-web-alerts"
+        },
+        {
+          "key": "idea.source.atlasTsunami",
+          "href": "https://atlas.modelmarket.dev/?layers=tsunami"
+        }
+      ]
+    },
+    "campus-nowcast": {
+      "chip": "live-wedge",
+      "scene": "pins",
+      "accent": "#94a3b8",
+      "cta": "https://atlas.modelmarket.dev",
+      "ctaKey": "touchCampus",
+      "rails": [
+        "ATLAS",
+        "GAIA",
+        "Hub"
+      ],
+      "livePath": [
+        {
+          "key": "idea.campus-nowcast.step1",
+          "href": "https://atlas.modelmarket.dev"
+        },
+        {
+          "key": "idea.campus-nowcast.step2",
+          "href": "https://atlas.modelmarket.dev/docs"
+        },
+        {
+          "key": "idea.campus-nowcast.step3",
+          "href": "https://modelmarket.dev"
+        }
+      ],
+      "demo": {
+        "capabilityId": "atlas.situation.brief@v1",
+        "priceUsd": "0.060",
+        "source": "ATLAS default-layer LIVE brief over a campus bbox"
+      },
+      "sources": [
+        {
+          "key": "idea.source.firstStreetDc",
+          "href": "https://www.cnbc.com/2026/06/18/data-center-climate-change-study.html"
+        },
+        {
+          "key": "idea.source.atlasDocs",
+          "href": "https://atlas.modelmarket.dev/docs"
+        }
+      ]
+    },
+    "situation-brief": {
+      "chip": "live-wedge",
+      "scene": "storm",
+      "accent": "#3de0c5",
+      "cta": "https://atlas.modelmarket.dev",
+      "ctaKey": "touchSituation",
+      "rails": [
+        "ATLAS",
+        "GAIA",
+        "Hub"
+      ],
+      "livePath": [
+        {
+          "key": "idea.situation-brief.step1",
+          "href": "https://atlas.modelmarket.dev"
+        },
+        {
+          "key": "idea.situation-brief.step2",
+          "href": "https://atlas.modelmarket.dev"
+        },
+        {
+          "key": "idea.situation-brief.step3",
+          "href": "https://modelmarket.dev"
+        }
+      ],
+      "demo": {
+        "capabilityId": "atlas.situation.brief@v1",
+        "priceUsd": "0.060",
+        "source": "ATLAS cited LIVE layer snapshot"
+      }
+    },
+    "nearest-read": {
+      "chip": "live-wedge",
+      "scene": "pins",
+      "accent": "#22d3ee",
+      "cta": "https://atlas.modelmarket.dev",
+      "ctaKey": "touchNearest",
+      "rails": [
+        "ATLAS",
+        "Hub"
+      ],
+      "livePath": [
+        {
+          "key": "idea.nearest-read.step1",
+          "href": "https://atlas.modelmarket.dev"
+        },
+        {
+          "key": "idea.nearest-read.step2",
+          "href": "https://atlas.modelmarket.dev"
+        },
+        {
+          "key": "idea.nearest-read.step3",
+          "href": "https://modelmarket.dev"
+        }
+      ],
+      "demo": {
+        "capabilityId": "atlas.nearest.read@v1",
+        "priceUsd": "0.030",
+        "source": "ATLAS LIVE spatial index"
+      }
+    },
+    "gnss-jamming-alert": {
+      "chip": "idea",
+      "scene": "radar",
+      "accent": "#e879f9",
+      "sourceKind": "curated",
+      "cta": "https://atlas.modelmarket.dev/?layers=jamming",
+      "ctaKey": "touchJamming",
+      "rails": [
+        "GAIA",
+        "ATLAS",
+        "Hub"
+      ],
+      "livePath": [
+        {
+          "key": "idea.gnss-jamming-alert.step1",
+          "href": "https://atlas.modelmarket.dev/?layers=jamming"
+        },
+        {
+          "key": "idea.gnss-jamming-alert.step2",
+          "href": "https://iot.modelmarket.dev"
+        },
+        {
+          "key": "idea.gnss-jamming-alert.step3",
+          "href": "https://atlas.modelmarket.dev/?layers=jamming"
+        }
+      ],
+      "sources": [
+        {
+          "key": "idea.source.cybernewsRegistry",
+          "href": "https://www.cybernews.space/data"
+        },
+        {
+          "key": "idea.source.atlasJamming",
+          "href": "https://atlas.modelmarket.dev/?layers=jamming"
+        }
+      ]
+    },
+    "parametric-trigger": {
+      "chip": "partner",
+      "scene": "threshold",
+      "accent": "#60a5fa",
+      "cta": "https://iot.modelmarket.dev",
+      "ctaKey": "openGaia",
+      "rails": [
+        "GAIA",
+        "Hub"
+      ]
+    },
+    "evidence-export": {
+      "chip": "idea",
+      "scene": "pack",
+      "accent": "#94a3b8",
+      "cta": "https://verify.modelmarket.dev",
+      "ctaKey": "openVerify",
+      "rails": [
+        "GAIA",
+        "AWR"
+      ]
+    },
+    "capability-15": {
+      "chip": "live",
+      "scene": "hex",
+      "accent": "#60a5fa",
+      "cta": "https://modelmarket.dev",
+      "ctaKey": "openHub",
+      "rails": [
+        "Hub"
+      ]
+    },
+    "hub-embed": {
+      "chip": "live",
+      "scene": "embed",
+      "accent": "#38bdf8",
+      "cta": "https://modelmarket.dev/widget/demo",
+      "ctaKey": "openWidget",
+      "rails": [
+        "Hub"
+      ]
+    },
+    "warden-mcp": {
+      "chip": "live",
+      "scene": "shield",
+      "accent": "#f0c14a",
+      "cta": "https://magic-ai-factory.com/argus/",
+      "ctaKey": "openArgus",
+      "rails": [
+        "ARGUS",
+        "WARDEN",
+        "Hub"
+      ]
+    },
+    "metis-answers": {
+      "chip": "live",
+      "scene": "star",
+      "accent": "#a78bfa",
+      "cta": "https://metis.modelmarket.dev",
+      "ctaKey": "openMetis",
+      "rails": [
+        "Metis",
+        "Hub"
+      ]
+    },
+    "awr-receipts": {
+      "chip": "live",
+      "scene": "receipt",
+      "accent": "#c4b5fd",
+      "cta": "https://verify.modelmarket.dev",
+      "ctaKey": "openVerify",
+      "rails": [
+        "AWR"
+      ]
+    },
+    "factory-oneshot": {
+      "chip": "live",
+      "scene": "blocks",
+      "accent": "#34d399",
+      "cta": "https://magic-ai-factory.com",
+      "ctaKey": "openFactory",
+      "rails": [
+        "Factory",
+        "Hub"
+      ]
+    },
+    "fair-draw": {
+      "chip": "live",
+      "scene": "platonic",
+      "accent": "#f472b6",
+      "cta": "https://lottery.modelmarket.dev",
+      "ctaKey": "openLottery",
+      "rails": [
+        "Oracles",
+        "Lottery"
+      ]
+    },
+    "momus-gate": {
+      "chip": "partner",
+      "scene": "radar",
+      "accent": "#fb7185",
+      "cta": "https://momus.modelmarket.dev",
+      "ctaKey": "openMomus",
+      "rails": [
+        "MOMUS",
+        "SKOPOS",
+        "Treasury"
+      ]
+    },
+    "cyclone-watch": {
+      "chip": "live-wedge",
+      "scene": "storm",
+      "accent": "#f97316",
+      "cta": "https://atlas.modelmarket.dev/?layers=cyclone",
+      "ctaKey": "touchCyclone",
+      "rails": [
+        "GAIA",
+        "ATLAS",
+        "Hub"
+      ],
+      "livePath": [
+        {
+          "key": "idea.cyclone-watch.step1",
+          "href": "https://atlas.modelmarket.dev/?layers=cyclone"
+        },
+        {
+          "key": "idea.cyclone-watch.step2",
+          "href": "https://iot.modelmarket.dev"
+        },
+        {
+          "key": "idea.cyclone-watch.step3",
+          "href": "https://modelmarket.dev"
+        }
+      ],
+      "demo": {
+        "capabilityId": "gaia.cyclone.read@v1",
+        "priceUsd": "0.002",
+        "source": "NOAA NHC/CPHC CurrentStorms.json (U.S. public domain; Atlantic + East/Central Pacific; advisory position, not a forecast track)"
+      },
+      "sources": [
+        {
+          "key": "idea.source.nhc",
+          "href": "https://www.nhc.noaa.gov/CurrentStorms.json"
+        },
+        {
+          "key": "idea.source.atlasCyclone",
+          "href": "https://atlas.modelmarket.dev/?layers=cyclone"
+        }
+      ]
+    },
+    "adsb-overflight": {
+      "chip": "idea",
+      "scene": "radar",
+      "accent": "#64748b",
+      "cta": "https://atlas.modelmarket.dev/?layers=adsb",
+      "ctaKey": "touchAdsb",
+      "rails": [
+        "GAIA",
+        "ATLAS",
+        "Hub"
+      ],
+      "livePath": [
+        {
+          "key": "idea.adsb-overflight.step1",
+          "href": "https://atlas.modelmarket.dev/?layers=adsb"
+        },
+        {
+          "key": "idea.adsb-overflight.step2",
+          "href": "https://iot.modelmarket.dev"
+        },
+        {
+          "key": "idea.adsb-overflight.step3",
+          "href": "https://modelmarket.dev"
+        }
+      ],
+      "sources": [
+        {
+          "key": "idea.source.adsblol",
+          "href": "https://api.adsb.lol/"
+        },
+        {
+          "key": "idea.source.odbl",
+          "href": "https://opendatacommons.org/licenses/odbl/1-0/"
+        }
+      ]
+    },
+    "geomag-window": {
+      "chip": "live-wedge",
+      "scene": "star",
+      "accent": "#a78bfa",
+      "cta": "https://atlas.modelmarket.dev/?layers=spacewx,geomag",
+      "ctaKey": "touchGeomag",
+      "rails": [
+        "GAIA",
+        "ATLAS",
+        "Hub"
+      ],
+      "livePath": [
+        {
+          "key": "idea.geomag-window.step1",
+          "href": "https://atlas.modelmarket.dev/?layers=spacewx,geomag"
+        },
+        {
+          "key": "idea.geomag-window.step2",
+          "href": "https://atlas.modelmarket.dev/docs"
+        },
+        {
+          "key": "idea.geomag-window.step3",
+          "href": "https://modelmarket.dev"
+        }
+      ],
+      "sources": [
+        {
+          "key": "idea.source.swpc",
+          "href": "https://www.swpc.noaa.gov/products/planetary-k-index"
+        },
+        {
+          "key": "idea.source.usgsGeomag",
+          "href": "https://www.usgs.gov/programs/geomagnetism"
+        },
+        {
+          "key": "idea.source.atlasDocs",
+          "href": "https://atlas.modelmarket.dev/docs"
+        }
+      ]
+    },
+    "pv-irradiance-record": {
+      "chip": "live-wedge",
+      "scene": "pack",
+      "accent": "#f0c14a",
+      "cta": "https://atlas.modelmarket.dev/?layers=solar,atmosphere",
+      "ctaKey": "touchPv",
+      "rails": [
+        "GAIA",
+        "ATLAS",
+        "Hub"
+      ],
+      "livePath": [
+        {
+          "key": "idea.pv-irradiance-record.step1",
+          "href": "https://atlas.modelmarket.dev/?layers=solar,atmosphere"
+        },
+        {
+          "key": "idea.pv-irradiance-record.step2",
+          "href": "https://atlas.modelmarket.dev/docs"
+        },
+        {
+          "key": "idea.pv-irradiance-record.step3",
+          "href": "https://modelmarket.dev"
+        }
+      ],
+      "sources": [
+        {
+          "key": "idea.source.nasaPower",
+          "href": "https://power.larc.nasa.gov/"
+        },
+        {
+          "key": "idea.source.cams",
+          "href": "https://atmosphere.copernicus.eu/"
+        },
+        {
+          "key": "idea.source.atlasDocs",
+          "href": "https://atlas.modelmarket.dev/docs"
+        }
+      ]
+    },
+    "smoke-operations": {
+      "chip": "live-wedge",
+      "scene": "storm",
+      "accent": "#9ca3af",
+      "cta": "https://atlas.modelmarket.dev/?layers=smoke,air",
+      "ctaKey": "touchSmoke",
+      "rails": [
+        "GAIA",
+        "ATLAS",
+        "Hub"
+      ],
+      "livePath": [
+        {
+          "key": "idea.smoke-operations.step1",
+          "href": "https://atlas.modelmarket.dev/?layers=smoke,air"
+        },
+        {
+          "key": "idea.smoke-operations.step2",
+          "href": "https://atlas.modelmarket.dev/docs"
+        },
+        {
+          "key": "idea.smoke-operations.step3",
+          "href": "https://modelmarket.dev"
+        }
+      ],
+      "sources": [
+        {
+          "key": "idea.source.noaaHms",
+          "href": "https://www.ospo.noaa.gov/Products/land/hms.html"
+        },
+        {
+          "key": "idea.source.openMeteoAir",
+          "href": "https://open-meteo.com/en/docs/air-quality-api"
+        },
+        {
+          "key": "idea.source.atlasDocs",
+          "href": "https://atlas.modelmarket.dev/docs"
+        }
+      ]
+    },
+    "desk-presets": {
+      "chip": "live-wedge",
+      "scene": "pins",
+      "accent": "#3de0c5",
+      "cta": "https://atlas.modelmarket.dev/docs",
+      "ctaKey": "touchDesks",
+      "rails": [
+        "ATLAS",
+        "GAIA",
+        "Hub"
+      ],
+      "livePath": [
+        {
+          "key": "idea.desk-presets.step1",
+          "href": "https://atlas.modelmarket.dev"
+        },
+        {
+          "key": "idea.desk-presets.step2",
+          "href": "https://atlas.modelmarket.dev/docs"
+        },
+        {
+          "key": "idea.desk-presets.step3",
+          "href": "https://modelmarket.dev"
+        }
+      ],
+      "sources": [
+        {
+          "key": "idea.source.atlasDocs",
+          "href": "https://atlas.modelmarket.dev/docs"
+        }
+      ]
+    },
+    "route-integrity": {
+      "chip": "live-wedge",
+      "scene": "radar",
+      "accent": "#34d399",
+      "cta": "https://atlas.modelmarket.dev/?layers=gnss,jamming,ais",
+      "ctaKey": "touchRoute",
+      "rails": [
+        "ATLAS",
+        "GAIA",
+        "Hub"
+      ],
+      "livePath": [
+        {
+          "key": "idea.route-integrity.step1",
+          "href": "https://atlas.modelmarket.dev/?layers=gnss,jamming,ais"
+        },
+        {
+          "key": "idea.route-integrity.step2",
+          "href": "https://atlas.modelmarket.dev/docs"
+        },
+        {
+          "key": "idea.route-integrity.step3",
+          "href": "https://modelmarket.dev"
+        }
+      ],
+      "sourceKind": "curated",
+      "sources": [
+        {
+          "key": "idea.source.cybernewsRegistry",
+          "href": "https://www.cybernews.space"
+        },
+        {
+          "key": "idea.source.eurefEpn",
+          "href": "https://www.epncb.oma.be/"
+        },
+        {
+          "key": "idea.source.atlasJamming",
+          "href": "https://atlas.modelmarket.dev/?layers=jamming"
+        }
+      ]
+    },
+    "observability-attest": {
+      "chip": "live-wedge",
+      "scene": "receipt",
+      "accent": "#60a5fa",
+      "cta": "https://atlas.modelmarket.dev/?layers=radar,alerts",
+      "ctaKey": "touchObservability",
+      "rails": [
+        "ATLAS",
+        "GAIA",
+        "Hub"
+      ],
+      "livePath": [
+        {
+          "key": "idea.observability-attest.step1",
+          "href": "https://atlas.modelmarket.dev/?layers=radar,alerts"
+        },
+        {
+          "key": "idea.observability-attest.step2",
+          "href": "https://atlas.modelmarket.dev/docs"
+        },
+        {
+          "key": "idea.observability-attest.step3",
+          "href": "https://modelmarket.dev"
+        }
+      ],
+      "sources": [
+        {
+          "key": "idea.source.nexradStatus",
+          "href": "https://www.weather.gov/nexrad"
+        },
+        {
+          "key": "idea.source.nwsAlerts",
+          "href": "https://www.weather.gov/documentation/services-web-api"
+        },
+        {
+          "key": "idea.source.atlasDocs",
+          "href": "https://atlas.modelmarket.dev/docs"
+        }
+      ]
+    }
+  },
+  "cut": [
+    "cold-chain (ops-heavy hardware)",
+    "crane site-stop (safety liability)",
+    "grid intensity (meter-of-record confusion)",
+    "prediction-market resolver (BD + dispute product)",
+    "Floodbase/Fathom clone (50-year flood index / quoting — we have alerts+gauges)",
+    "Pano/Technosylva clone (cameras + spread models — we sell cited snapshots)",
+    "First Street climate siting (30-year scenarios — we sell nowcast briefs)",
+    "NWS AutoWarn wrap (free CAP without hydrology pairing is not a product)",
+    "lightning-as-ignition (forbidden claim)",
+    "newsroom desk (weak willingness to pay)",
+    "ACEX CapShares (demo liquidity / expectations)",
+    "Signal Hunt (community, not ARR card)",
+    "desktop coach SKUs (separate catalog)",
+    "framework bridges (builder footnote)"
+  ]
+}

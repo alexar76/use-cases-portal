@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en" data-base="" data-release="20260818b">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Idea · AIMarket</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/portal.css?v=20260813i">
+</head>
+<body data-idea-page="1">
+  <div class="veil" aria-hidden="true"></div>
+  <div class="site">
+    <header class="nav">
+      <a class="nav-brand" href="index.html">AI<span>Market</span></a>
+      <nav class="nav-links" aria-label="Primary" data-i18n-aria-label="aria.primaryNav">
+        <a href="index.html#onboard" data-i18n="nav.onboard">Start</a>
+        <a href="index.html#boards" data-i18n="nav.build">Boards</a>
+        <a href="index.html#cases" data-i18n="nav.cases">Use cases</a>
+      </nav>
+      <div class="nav-end">
+        <div class="lang" role="group" aria-label="Language" data-i18n-aria-label="nav.lang">
+          <button type="button" class="lang-btn is-active" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" class="lang-btn" data-lang="ru" aria-pressed="false">RU</button>
+          <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+          <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">FR</button>
+          <button type="button" class="lang-btn" data-lang="zh" aria-pressed="false">ZH</button>
+        </div>
+      </div>
+    </header>
+
+    <p id="idea-missing" class="idea-missing" hidden data-i18n="idea.missing">Idea not found.</p>
+
+    <article id="idea-page" hidden>
+      <div class="idea-hero">
+        <div class="idea-hero-copy">
+          <a id="idea-back" class="icard-go" href="index.html#boards" data-i18n="idea.back">← All boards</a>
+          <div style="height:14px"></div>
+          <div class="idea-status-row">
+            <span id="idea-chip" class="chip chip-live">live</span>
+            <span id="idea-status-note" class="idea-status-note"></span>
+          </div>
+          <h1 id="idea-title">Idea</h1>
+          <p id="idea-lead" class="idea-lead"></p>
+          <div class="idea-actions">
+            <a id="idea-cta" class="btn btn-live" href="#" target="_blank" rel="noopener">Open</a>
+            <a class="btn btn-ghost" href="index.html#boards" data-i18n="idea.back">← All boards</a>
+          </div>
+          <div id="idea-livepath-wrap" hidden>
+            <p class="idea-livepath-label" data-i18n="idea.livePath">Live path now</p>
+            <div id="idea-livepath" class="path idea-livepath"></div>
+          </div>
+          <p style="margin:22px 0 8px;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)" data-i18n="idea.rails">Rails</p>
+          <div id="idea-rails" class="rail-pills"></div>
+          <p class="idea-telemetry">
+            <a href="https://hunt.modelmarket.dev/" target="_blank" rel="noopener"><span data-i18n="idea.telemetry">See these rails in live telemetry — play a Signal Hunt round</span> ↗</a>
+          </p>
+        </div>
+        <div class="idea-viz" aria-hidden="true">
+          <div class="idea-viz-hud"><span id="idea-viz-mode">LIVE SYSTEM</span><i></i></div>
+          <canvas id="idea-canvas"></canvas>
+          <div class="idea-viz-orbit"></div>
+        </div>
+      </div>
+      <section class="idea-brief" aria-label="Opportunity brief" data-i18n-aria-label="idea.brief.aria">
+        <div class="idea-perspective" role="group" aria-label="Perspective" data-i18n-aria-label="idea.perspective.aria">
+          <button class="idea-perspective-btn is-active" type="button" aria-pressed="true" data-perspective="developer" data-i18n="idea.perspective.developer">Developer</button>
+          <button class="idea-perspective-btn" type="button" aria-pressed="false" data-perspective="investor" data-i18n="idea.perspective.investor">Investor</button>
+          <span class="idea-perspective-glider" aria-hidden="true"></span>
+        </div>
+        <div class="idea-brief-head">
+          <p id="idea-brief-label">OPPORTUNITY BRIEF</p>
+          <h2 id="idea-brief-title">From working infrastructure to a focused product</h2>
+        </div>
+        <div class="idea-brief-grid">
+          <article class="idea-brief-card idea-brief-card--ready">
+            <span class="idea-brief-icon">✓</span>
+            <div><small id="idea-ready-label">WHAT EXISTS</small><strong id="idea-ready"></strong></div>
+          </article>
+          <article class="idea-brief-card idea-brief-card--build">
+            <span class="idea-brief-icon">→</span>
+            <div><small id="idea-build-label">WHAT TO BUILD NEXT</small><strong id="idea-build"></strong></div>
+          </article>
+        </div>
+        <div class="idea-value-flow">
+          <span id="idea-flow-input">Verified input</span><i></i>
+          <span id="idea-flow-product">Product logic</span><i></i>
+          <span id="idea-flow-result">Paid result</span>
+        </div>
+      </section>
+      <div class="idea-facts">
+        <div class="fact" data-fact="buyer"><span>01</span><p id="idea-who"></p></div>
+        <div class="fact" data-fact="artifact"><span>02</span><p id="idea-artifact"></p></div>
+        <div class="fact" data-fact="boundary"><span>03</span><p id="idea-not"></p></div>
+        <div class="fact" data-fact="risk"><span>04</span><p id="idea-hard"></p></div>
+      </div>
+      <aside id="idea-sources-wrap" class="idea-sources" hidden>
+        <p data-i18n="idea.sources.label">EVIDENCE &amp; LIMITS · PRIMARY LINKS</p>
+        <div id="idea-sources"></div>
+      </aside>
+      <section id="idea-live-proof" class="idea-live-proof" hidden aria-labelledby="idea-live-title">
+        <div class="idea-live-aurora" aria-hidden="true"></div>
+        <div class="idea-live-signal" aria-hidden="true">
+          <svg viewBox="0 0 180 180" role="presentation">
+            <circle class="idea-live-ring idea-live-ring--outer" cx="90" cy="90" r="72"></circle>
+            <circle class="idea-live-ring idea-live-ring--middle" cx="90" cy="90" r="49"></circle>
+            <circle class="idea-live-ring idea-live-ring--inner" cx="90" cy="90" r="25"></circle>
+            <path class="idea-live-sweep" d="M90 90 160 73 A72 72 0 0 1 146 135Z"></path>
+            <circle class="idea-live-dot idea-live-dot--a" cx="128" cy="55" r="4"></circle>
+            <circle class="idea-live-dot idea-live-dot--b" cx="54" cy="119" r="3"></circle>
+            <circle class="idea-live-core" cx="90" cy="90" r="7"></circle>
+          </svg>
+          <span data-i18n="idea.live.signal">LIVE SURFACE</span>
+        </div>
+        <div class="idea-live-content">
+          <header class="idea-live-head">
+            <div>
+              <p data-i18n="idea.live.label">LIVE PROOF RUN · HUB → AWR</p>
+              <h2 id="idea-live-title" data-i18n="idea.live.title">Turn this idea into a portable artifact</h2>
+            </div>
+            <span class="idea-live-badge"><i></i><span data-i18n="idea.live.badge">REAL INVOKE</span></span>
+          </header>
+          <p class="idea-live-intro" data-i18n="idea.live.body">Run the fixed public scenario through Hub. A successful result must return a canonical signed receipt — otherwise this panel fails closed.</p>
+          <div class="idea-live-controls">
+            <button id="idea-live-run" class="btn btn-live idea-live-run" type="button">
+              <span data-i18n="idea.live.run">Run LIVE scenario</span><i aria-hidden="true">→</i>
+            </button>
+            <p id="idea-live-status" class="idea-live-status" role="status" aria-live="polite" data-i18n="idea.live.ready">Ready · fixed public bbox · public demo · charged $0</p>
+          </div>
+          <div id="idea-live-result" class="idea-live-result" hidden>
+            <div class="idea-live-verdict"><span>✓</span><div><small data-i18n="idea.live.accepted">ACCEPTED BY HUB</small><strong id="idea-live-summary"></strong></div></div>
+            <dl id="idea-live-metrics" class="idea-live-metrics"></dl>
+            <div class="idea-live-proofrail" aria-label="Proof path" data-i18n-aria-label="idea.live.pathAria">
+              <span>ATLAS <b data-i18n="idea.live.pathData">LIVE data</b></span><i></i>
+              <span>HUB <b data-i18n="idea.live.pathSeal">sealed</b></span><i></i>
+              <span>AWR/2 <b data-i18n="idea.live.pathObject">portable</b></span><i></i>
+              <span>VERIFY <b data-i18n="idea.live.pathCheck">local check</b></span>
+            </div>
+            <div class="idea-live-actions">
+              <a id="idea-live-verify" class="btn btn-live" href="#" target="_blank" rel="noopener" data-i18n="idea.live.verify">Verify signer ↗</a>
+              <button id="idea-live-share" class="btn btn-ghost" type="button" data-i18n="idea.live.share">Copy proof link</button>
+              <a id="idea-live-json" class="idea-live-json" href="#" target="_blank" rel="noopener" data-i18n="idea.live.json">Open receipt JSON ↗</a>
+            </div>
+            <p class="idea-live-truth"><span>i</span><span data-i18n="idea.live.disclaimer">Verification confirms issuer, signature, and integrity. It does not prove that a physical observation is true.</span></p>
+          </div>
+        </div>
+      </section>
+      <section class="idea-lab" aria-labelledby="idea-lab-title">
+        <header class="idea-lab-head">
+          <div><p data-i18n="idea.lab.label">INTERACTIVE SYSTEM LAB</p><h2 id="idea-lab-title" data-i18n="idea.lab.title">Explore the product path</h2></div>
+          <span id="idea-demo-badge" class="idea-demo-badge" hidden data-i18n="idea.lab.demo">SCHEMA SAMPLE · NO LIVE INVOKE</span>
+        </header>
+        <div class="idea-lab-grid">
+          <div class="idea-architecture-wrap">
+            <p class="idea-lab-caption" data-i18n="idea.lab.architecture">CLICK A COMPONENT TO INSPECT ITS ROLE</p>
+            <div id="idea-architecture" class="idea-architecture"></div>
+            <div id="idea-node-detail" class="idea-node-detail" aria-live="polite"></div>
+          </div>
+          <div id="idea-simulator" class="idea-simulator" hidden>
+            <p class="idea-lab-caption" data-i18n="idea.lab.state">CHOOSE THE EVIDENCE STATE</p>
+            <div class="idea-state-tabs" role="group" aria-label="Evidence state" data-i18n-aria-label="idea.lab.stateAria">
+              <button type="button" class="idea-state is-active" data-state="live" aria-pressed="true">LIVE</button>
+              <button type="button" class="idea-state" data-state="sim" aria-pressed="false">SIM</button>
+              <button type="button" class="idea-state" data-state="invalid" aria-pressed="false">INVALID</button>
+            </div>
+            <div class="idea-sim-stage" data-state="live">
+              <div class="idea-packet"><span></span><b data-i18n="idea.lab.packet">EVIDENCE ENVELOPE</b></div>
+              <div class="idea-gate"><i></i><strong id="idea-gate-label"></strong></div>
+              <div class="idea-settlement"><small data-i18n="idea.lab.settlement">SETTLEMENT</small><strong id="idea-settlement-result"></strong></div>
+            </div>
+            <p id="idea-state-explainer" class="idea-state-explainer" aria-live="polite"></p>
+            <button id="idea-receipt-toggle" class="idea-receipt-toggle" type="button" aria-expanded="false"><span data-i18n="idea.receipt.open">Inspect the receipt</span><i>⌄</i></button>
+          </div>
+        </div>
+        <div id="idea-receipt" class="idea-receipt" hidden>
+          <div class="idea-receipt-head"><div><span data-i18n="idea.receipt.demo">SCHEMA SAMPLE</span><strong id="idea-receipt-id"></strong></div><span id="idea-receipt-verdict" class="idea-receipt-verdict"></span></div>
+          <dl>
+            <div><dt>capability_id</dt><dd id="receipt-capability"></dd></div>
+            <div><dt>source</dt><dd id="receipt-source"></dd></div>
+            <div><dt>signature</dt><dd id="receipt-signature"></dd></div>
+            <div><dt>seq</dt><dd id="receipt-seq"></dd></div>
+            <div><dt>price_usd</dt><dd id="receipt-price"></dd></div>
+            <div><dt>settlement</dt><dd id="receipt-settlement"></dd></div>
+          </dl>
+          <p id="idea-receipt-note"></p>
+        </div>
+      </section>
+    </article>
+
+    <footer class="foot">
+      <div class="wrap">
+        <div><strong>AIMarket</strong> · portal</div>
+        <div data-i18n="foot.line">Point your domain at /portal · MIT surfaces · crypto optional</div>
+      </div>
+    </footer>
+  </div>
+  <script type="module" src="js/i18n.js?v=20260818b"></script>
+  <script type="module" src="js/idea-page.js?v=20260818b"></script>
+</body>
+</html>

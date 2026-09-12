@@ -1,0 +1,14 @@
+.DS_Store
+.idea/
+.vscode/
+*.log
+.env
+.env.*
+!.env.example
+_site/
+_pages/
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/

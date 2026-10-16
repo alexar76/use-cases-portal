@@ -1,8 +1,9 @@
 <!-- aicom-mirror-notice -->
-> **📖 Read-only mirror.** `use-cases-portal` is published from the canonical AI-Factory monorepo.
-> **Pull requests are not accepted** — any commit pushed here is overwritten by
-> `scripts/mirror_satellites.sh` on the next sync.
-> 🐞 Found a bug or have a request? Please **[open an issue](https://github.com/alexar76/use-cases-portal/issues)**.
+> **🔄 Synced from a monorepo — but with a live history.** `use-cases-portal` mirrors the
+> canonical AI-Factory monorepo. History here is append-only (no force-push).
+> **Pull requests are welcome** — merged PRs are imported back into the monorepo
+> and re-synced here, so your contribution becomes canonical.
+> 💬 **[Issues](https://github.com/alexar76/use-cases-portal/issues)** · **[Pull requests](https://github.com/alexar76/use-cases-portal/pulls)** both welcome.
 
 # AIMarket use-cases portal
 

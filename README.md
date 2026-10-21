@@ -9,7 +9,7 @@
 
 <!-- aicom-readme-badges -->
 <p align="center">
-  <a href="https://github.com/alexar76/use-cases-portal/actions/workflows/ci.yml"><img src="https://raw.githubusercontent.com/alexar76/use-cases-portal/refs/heads/main/docs/badges/ci.svg" alt="CI" /></a>
+  <a href="https://github.com/alexar76/use-cases-portal/actions/workflows/ci.yml"><img src="https://github.com/alexar76/use-cases-portal/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
   <a href="https://github.com/alexar76/use-cases-portal/actions/workflows/pages.yml"><img src="https://github.com/alexar76/use-cases-portal/actions/workflows/pages.yml/badge.svg" alt="Pages deploy" /></a>
   <a href="https://alexar76.github.io/use-cases-portal/"><img src="https://raw.githubusercontent.com/alexar76/use-cases-portal/refs/heads/main/docs/badges/landing.svg" alt="Landing" /></a>
   <img src="https://raw.githubusercontent.com/alexar76/use-cases-portal/refs/heads/main/docs/badges/i18n.svg" alt="5 languages" />

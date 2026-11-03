@@ -5,7 +5,7 @@
  * Set <html data-base="../"> on nested pages so locale fetch resolves.
  */
 const LOCALES = ["en", "ru", "es", "fr", "zh"];
-const LOCALE_VERSION = "20261010-onboarding";
+const LOCALE_VERSION = "20261103-roles";
 const STORAGE_KEY = "aimarket-portal-lang";
 const cache = Object.create(null);
 const listeners = new Set();
@@ -38,6 +38,11 @@ function localizeAtlasLink(anchor, lang = current) {
 function syncAtlasLinks(lang = current) {
   document.querySelectorAll('a[href*="modelmarket.dev"]').forEach((anchor) => {
     localizeAtlasLink(anchor, lang);
+  });
+  document.querySelectorAll('a[href^="?path="]').forEach((anchor) => {
+    const url = new URL(anchor.href);
+    url.searchParams.set("lang", lang);
+    anchor.href = url.search + url.hash;
   });
 }
 

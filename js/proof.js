@@ -2,7 +2,7 @@
  * Live proof, clickable architecture, glossary, and transparent economics.
  * The snapshot is read-only. A GAIA invoke only happens after an explicit click.
  */
-import { currentLang, getDict, onDict } from "./i18n.js?v=20261010-onboarding";
+import { currentLang, getDict, onDict } from "./i18n.js?v=20261103-roles";
 
 const SNAPSHOT_URL = "/live/snapshot.json";
 const INVOKE_URL = "/live/weather";
@@ -78,7 +78,7 @@ const architecture = {
   gaia: { number: "02", title: "GAIA", key: "proof.arch.gaia.body", href: "https://iot.modelmarket.dev" },
   atlas: { number: "03", title: "ATLAS", key: "proof.arch.atlas.body", href: "https://atlas.modelmarket.dev" },
   hub: { number: "04", title: "HUB", key: "proof.arch.hub.body", href: "https://modelmarket.dev" },
-  product: { number: "05", titleKey: "proof.arch.product", key: "proof.arch.product.body", href: "ideas.html?v=20261010-onboarding&id=fire-hotspot" },
+  product: { number: "05", titleKey: "proof.arch.product", key: "proof.arch.product.body", href: "ideas.html?v=20261103-roles&id=fire-hotspot" },
   metis: { number: "+", title: "METIS", key: "proof.arch.metis.body", href: "https://metis.modelmarket.dev" },
 };
 

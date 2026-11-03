@@ -1,5 +1,5 @@
 /** Role-based onboarding path switcher */
-const tabs = document.querySelectorAll("[data-path]");
+const tabs = [...document.querySelectorAll("[data-path]")];
 const panels = document.querySelectorAll("[data-panel]");
 
 function showPath(id) {
@@ -22,28 +22,24 @@ function showPath(id) {
 tabs.forEach((btn) => {
   btn.addEventListener("click", () => showPath(btn.getAttribute("data-path")));
   btn.addEventListener("keydown", (event) => {
-    const ordered = [...tabs];
-    const index = ordered.indexOf(btn);
+    const index = tabs.indexOf(btn);
     let next = null;
-    if (event.key === "ArrowRight" || event.key === "ArrowDown") next = (index + 1) % ordered.length;
-    if (event.key === "ArrowLeft" || event.key === "ArrowUp") next = (index - 1 + ordered.length) % ordered.length;
+    if (event.key === "ArrowRight" || event.key === "ArrowDown") next = (index + 1) % tabs.length;
+    if (event.key === "ArrowLeft" || event.key === "ArrowUp") next = (index - 1 + tabs.length) % tabs.length;
     if (event.key === "Home") next = 0;
-    if (event.key === "End") next = ordered.length - 1;
+    if (event.key === "End") next = tabs.length - 1;
     if (next == null) return;
     event.preventDefault();
-    const target = ordered[next];
+    const target = tabs[next];
     showPath(target.getAttribute("data-path"));
     target.focus();
   });
 });
 
-const q = new URLSearchParams(location.search).get("path");
-let initial = "see";
-if (q && document.querySelector(`[data-panel="${q}"]`)) initial = q;
-else {
-  try {
-    const s = sessionStorage.getItem("aimarket-portal-path");
-    if (s && document.querySelector(`[data-panel="${s}"]`)) initial = s;
-  } catch (_) {}
-}
-showPath(initial);
+const paths = new Set(tabs.map((tab) => tab.dataset.path));
+const requested = new URLSearchParams(location.search).get("path");
+let saved;
+try {
+  saved = sessionStorage.getItem("aimarket-portal-path");
+} catch (_) {}
+showPath(paths.has(requested) ? requested : paths.has(saved) ? saved : "see");

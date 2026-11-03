@@ -1,9 +1,9 @@
 /**
  * Render direction boards + idea cards from data/boards.json
  */
-import { mountAll } from "./preview3d.js?v=20261010-onboarding";
+import { mountAll } from "./preview3d.js?v=20261103-roles";
 
-const DATA_VERSION = "20261010-onboarding";
+const DATA_VERSION = "20261103-roles";
 
 const root = document.getElementById("boards-root");
 if (!root) {

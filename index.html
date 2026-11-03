@@ -16,7 +16,7 @@
   <meta name="twitter:description" content="Verifiable provenance → agent-native products. Live rails, use cases, opportunity catalog.">
   <meta name="twitter:image" content="https://use.modelmarket.dev/assets/atlas-hero-orbit.png">
   <link href="fonts/fonts.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/portal.css?v=20261010-onboarding">
+  <link rel="stylesheet" href="css/portal.css?v=20261103-roles">
 </head>
 <body>
   <div id="stage" aria-hidden="true"></div>
@@ -55,7 +55,7 @@
           <p class="hero-lead" data-i18n="hero.lead">Live rails for source-attributed readings, pay-per-call agents, and focused products that preserve evidence boundaries.</p>
           <div class="hero-actions">
             <a class="btn btn-live" href="#proof" data-i18n="hero.ctaTry">Run a live request</a>
-            <a class="btn btn-ghost" href="#investors" data-i18n="hero.ctaInvestor">For investors</a>
+            <a class="btn btn-ghost" href="?path=invest#onboard" data-i18n="hero.ctaInvestor">For investors</a>
           </div>
         </div>
         <aside id="live-evidence" class="live-evidence" data-state="loading" aria-live="polite" aria-label="Live evidence" data-i18n-aria-label="proof.live.aria">
@@ -93,7 +93,7 @@
     <!-- AUDIENCE ENTRANCES -->
     <section id="audiences" class="audience-section">
       <div class="wrap">
-        <p class="sec-label reveal" data-i18n="aud.label">Two ways to read the system</p>
+        <p class="sec-label reveal" data-i18n="ob.label">Practical paths</p>
         <h2 class="sec-title reveal" data-i18n="aud.title">Start from the outcome you need</h2>
         <p class="sec-sub reveal" data-i18n="aud.sub">The same rails create developer leverage and investor optionality.</p>
         <div class="audience-grid">
@@ -103,7 +103,7 @@
             <h3 data-i18n="aud.dev.title">Build on verified physical-world data</h3>
             <p data-i18n="aud.dev.body">Understand the architecture, inspect live rails, choose a capability, and find the thin product layer you can build.</p>
             <div class="audience-actions">
-              <a class="btn btn-live" href="#onboard" data-i18n="aud.dev.primary">Choose a build path</a>
+              <a class="btn btn-live" href="?path=build#onboard" data-i18n="aud.dev.primary">Choose a build path</a>
               <a class="btn btn-ghost" href="#boards" data-i18n="aud.dev.secondary">Explore potential ideas</a>
             </div>
           </article>
@@ -113,10 +113,14 @@
             <h3 data-i18n="aud.inv.title">See how verifiable provenance becomes economic leverage</h3>
             <p data-i18n="aud.inv.body">Connect the moat, live evidence, monetization rails, reusable infrastructure, and potential vertical products.</p>
             <div class="audience-actions">
-              <a class="btn btn-live" href="#system" data-i18n="aud.inv.primary">Understand the thesis</a>
+              <a class="btn btn-live" href="?path=invest#onboard" data-i18n="aud.inv.primary">Investor path</a>
               <a class="btn btn-ghost" href="#investors" data-i18n="aud.inv.secondary">Read investor context</a>
             </div>
           </article>
+        </div>
+        <div class="ob-scenario-actions">
+          <a class="btn btn-ghost" href="?path=publish#onboard" data-i18n="aud.publish">Connect an API or data source</a>
+          <a class="btn btn-ghost" href="?path=buy#onboard" data-i18n="aud.buy">Try buying a capability</a>
         </div>
       </div>
     </section>
@@ -307,7 +311,7 @@
                 <p data-i18n="ob.see.s2d">Open a focused ATLAS view, then inspect the callable watchbox product that evaluates a bbox and layers.</p>
                 <div class="ob-scenario-actions">
                   <a class="btn btn-fire" href="https://atlas.modelmarket.dev/?layers=fire,weather" target="_blank" rel="noopener" data-i18n="ob.see.fire">Fire + weather</a>
-                  <a class="btn btn-signal" href="ideas.html?v=20261010-onboarding&amp;id=verified-watchbox" data-i18n="ob.see.watchbox">Verified watchbox</a>
+                  <a class="btn btn-signal" href="ideas.html?v=20261103-roles&amp;id=verified-watchbox" data-i18n="ob.see.watchbox">Verified watchbox</a>
                 </div>
               </div>
             </li>
@@ -392,26 +396,25 @@
             <li>
               <span class="ob-n">01</span>
               <div>
-                <strong data-i18n="ob.build.s1t">Pick one idea</strong>
-                <p data-i18n="ob.build.s1d">Weather Risk Analyst first — then parametric, cold-chain, export API… Status chips are honest.</p>
-                <a class="btn btn-live" href="#boards" data-i18n="ob.build.s1a">Build board</a>
+                <strong data-i18n="ob.build.s1t">Run a free demo request</strong>
+                <p data-i18n="ob.build.s1d">Request a real GAIA weather reading and verify the receipt signature. No account or wallet required.</p>
+                <a class="btn btn-live" href="#proof" data-i18n="proof.console.run">Run live request</a>
               </div>
             </li>
             <li>
               <span class="ob-n">02</span>
               <div>
-                <strong data-i18n="ob.build.s2t">Touch the entry product</strong>
-                <p data-i18n="ob.build.s2d">Open Weather Risk — live Hub → GAIA → ATLAS path. Rails ship today; the product layer is what you build.</p>
-                <a class="btn btn-live" href="ideas.html?v=20261010-onboarding&amp;id=weather-risk" data-i18n="ob.build.s2a">Open Weather Risk</a>
-                <a class="btn btn-ghost" href="BUILD-AUDIT.md" target="_blank" rel="noopener" data-i18n="ob.build.s2b" style="margin-left:8px">Engineering notes</a>
+                <strong data-i18n="ob.build.s2t">Repeat from your application</strong>
+                <p data-i18n="ob.build.s2d">Open the consumer starter to discover a capability, set a price ceiling, and keep the returned receipt.</p>
+                <a class="btn btn-live" href="https://play.modelmarket.dev/start?role=consumer" data-i18n="ob.build.s3a">Download consumer project</a>
               </div>
             </li>
             <li>
               <span class="ob-n">03</span>
               <div>
-                <strong data-i18n="ob.build.s3t">Build and sell your application</strong>
-                <p data-i18n="ob.build.s3d">Start with the consumer project. Buy evidence through the Hub, package it into your own product and set your customer prices and spending limits.</p>
-                <a class="btn btn-ghost" href="https://play.modelmarket.dev/start?role=consumer" data-i18n="ob.build.s3a">Download consumer project</a>
+                <strong data-i18n="ob.build.s3t">Choose what to build</strong>
+                <p data-i18n="ob.build.s3d">Compare use cases and see which parts are already callable and which need development.</p>
+                <a class="btn btn-ghost" href="#boards" data-i18n="aud.dev.secondary">Explore potential ideas</a>
               </div>
             </li>
           </ol>
@@ -424,25 +427,25 @@
             <li>
               <span class="ob-n">01</span>
               <div>
-                <strong data-i18n="ob.invest.s1t">Touch the product</strong>
-                <p data-i18n="ob.invest.s1d">Open ATLAS and GAIA before any slide. Rails are live.</p>
-                <a class="btn btn-live" href="https://atlas.modelmarket.dev" target="_blank" rel="noopener" data-i18n="ob.invest.s1a">Open ATLAS</a>
+                <strong data-i18n="ob.invest.s1t">Inspect the evidence</strong>
+                <p data-i18n="ob.invest.s1d">See what was verified across two MCP logs and what the Hub observed from an external seller.</p>
+                <a class="btn btn-live" href="#featured-cases" data-i18n="ob.invest.s1a">Open the case studies</a>
               </div>
             </li>
             <li>
               <span class="ob-n">02</span>
               <div>
-                <strong data-i18n="ob.invest.s2t">Read the intro</strong>
-                <p data-i18n="ob.invest.s2d">Approximate adjacent markets + named sources. Disclaimer first.</p>
-                <a class="btn btn-ghost" href="#investors" data-i18n="ob.invest.s2a">Investor article</a>
+                <strong data-i18n="ob.invest.s2t">Review observed demand</strong>
+                <p data-i18n="ob.invest.s2d">Check the timestamp, measurement window, and how the report separates external activity from operator traffic.</p>
+                <a class="btn btn-ghost" href="https://verify.modelmarket.dev/demand.json" target="_blank" rel="noopener" data-i18n="ob.invest.s2a">Open demand report</a>
               </div>
             </li>
             <li>
               <span class="ob-n">03</span>
               <div>
-                <strong data-i18n="ob.invest.s3t">Stay on the product</strong>
-                <p data-i18n="ob.invest.s3d">Open ATLAS, GAIA, and Hub. Serious conversations follow from what already ships.</p>
-                <a class="btn btn-ghost" href="#investors" data-i18n="ob.invest.s3a">Back to sources</a>
+                <strong data-i18n="ob.invest.s3t">Read the investor context</strong>
+                <p data-i18n="ob.invest.s3d">Explore illustrative unit economics and the sources for estimates of adjacent markets.</p>
+                <a class="btn btn-ghost" href="#investors" data-i18n="aud.inv.secondary">Read investor context</a>
               </div>
             </li>
           </ol>
@@ -503,7 +506,7 @@
           </a>
         </div>
         <div class="featured-cases reveal">
-          <a class="featured-case featured-case--fire" href="ideas.html?v=20261010-onboarding&amp;id=fire-hotspot">
+          <a class="featured-case featured-case--fire" href="ideas.html?v=20261103-roles&amp;id=fire-hotspot">
             <div class="featured-case-scene" aria-hidden="true">
               <span class="fire-orbit"></span><span class="fire-core"></span><span class="weather-stream weather-stream--one"></span><span class="weather-stream weather-stream--two"></span>
             </div>
@@ -516,7 +519,7 @@
               <span class="featured-case-go" data-i18n="featured.fire.cta">Explore the live path →</span>
             </div>
           </a>
-          <a class="featured-case featured-case--watchbox" href="ideas.html?v=20261010-onboarding&amp;id=verified-watchbox">
+          <a class="featured-case featured-case--watchbox" href="ideas.html?v=20261103-roles&amp;id=verified-watchbox">
             <div class="featured-case-scene" aria-hidden="true">
               <span class="radar-grid"></span><span class="radar-sweep"></span><span class="signal-node signal-node--one"></span><span class="signal-node signal-node--two"></span><span class="signal-node signal-node--three"></span>
             </div>
@@ -529,7 +532,7 @@
               <span class="featured-case-go" data-i18n="featured.watchbox.cta">Inspect the callable SKU →</span>
             </div>
           </a>
-          <a class="featured-case featured-case--flood" href="ideas.html?v=20261010-onboarding&amp;id=flood-hydrology">
+          <a class="featured-case featured-case--flood" href="ideas.html?v=20261103-roles&amp;id=flood-hydrology">
             <div class="featured-case-scene" aria-hidden="true">
               <span class="flood-basin"></span><span class="flood-wave flood-wave--one"></span><span class="flood-wave flood-wave--two"></span><span class="gauge-pin gauge-pin--one"></span><span class="gauge-pin gauge-pin--two"></span>
             </div>
@@ -542,7 +545,7 @@
               <span class="featured-case-go" data-i18n="featured.flood.cta">Explore the hydrology path →</span>
             </div>
           </a>
-          <a class="featured-case featured-case--ais" href="ideas.html?v=20261010-onboarding&amp;id=nordic-ais">
+          <a class="featured-case featured-case--ais" href="ideas.html?v=20261103-roles&amp;id=nordic-ais">
             <div class="featured-case-scene" aria-hidden="true">
               <span class="radar-grid"></span><span class="radar-sweep"></span><span class="signal-node signal-node--one"></span><span class="signal-node signal-node--two"></span>
             </div>
@@ -555,7 +558,7 @@
               <span class="featured-case-go" data-i18n="featured.ais.cta">Explore the AIS path →</span>
             </div>
           </a>
-          <a class="featured-case featured-case--pv" href="ideas.html?v=20261010-onboarding&amp;id=pv-irradiance-record">
+          <a class="featured-case featured-case--pv" href="ideas.html?v=20261103-roles&amp;id=pv-irradiance-record">
             <div class="featured-case-scene" aria-hidden="true">
               <span class="evidence-slab"></span><span class="evidence-bar"></span><span class="evidence-pip"></span>
             </div>
@@ -568,7 +571,7 @@
               <span class="featured-case-go" data-i18n="featured.pv.cta">Explore the PV path →</span>
             </div>
           </a>
-          <a class="featured-case featured-case--campus" href="ideas.html?v=20261010-onboarding&amp;id=campus-nowcast">
+          <a class="featured-case featured-case--campus" href="ideas.html?v=20261103-roles&amp;id=campus-nowcast">
             <div class="featured-case-scene" aria-hidden="true">
               <span class="flood-basin"></span><span class="gauge-pin gauge-pin--one"></span><span class="gauge-pin gauge-pin--two"></span>
             </div>
@@ -586,7 +589,7 @@
         <h2 class="sec-title reveal" data-i18n="cases.economyTitle">Ship-next desks on live rails</h2>
         <p class="sec-sub reveal" data-i18n="cases.economySub">Evidence, spend chargeback, and capability bake-off — build-ready application layers, not new sensors.</p>
         <div class="featured-cases reveal">
-          <a class="featured-case featured-case--evidence" href="ideas.html?v=20261010-onboarding&amp;id=answer-evidence-pack">
+          <a class="featured-case featured-case--evidence" href="ideas.html?v=20261103-roles&amp;id=answer-evidence-pack">
             <div class="featured-case-scene" aria-hidden="true">
               <span class="evidence-slab"></span><span class="evidence-bar"></span><span class="evidence-ring"></span><span class="evidence-pip"></span>
             </div>
@@ -598,7 +601,7 @@
               <span class="featured-case-go" data-i18n="featured.evidence.cta">Open the evidence path →</span>
             </div>
           </a>
-          <a class="featured-case featured-case--spend" href="ideas.html?v=20261010-onboarding&amp;id=agent-spend-desk">
+          <a class="featured-case featured-case--spend" href="ideas.html?v=20261103-roles&amp;id=agent-spend-desk">
             <div class="featured-case-scene" aria-hidden="true">
               <span class="spend-slab spend-slab--a"></span><span class="spend-slab spend-slab--b"></span><span class="spend-slab spend-slab--c"></span><span class="spend-orbit"></span>
             </div>
@@ -610,7 +613,7 @@
               <span class="featured-case-go" data-i18n="featured.spend.cta">Open the spend path →</span>
             </div>
           </a>
-          <a class="featured-case featured-case--bakeoff" href="ideas.html?v=20261010-onboarding&amp;id=capability-bakeoff">
+          <a class="featured-case featured-case--bakeoff" href="ideas.html?v=20261103-roles&amp;id=capability-bakeoff">
             <div class="featured-case-scene" aria-hidden="true">
               <span class="bake-core bake-core--a"></span><span class="bake-core bake-core--b"></span><span class="bake-ring"></span><span class="bake-bar"></span>
             </div>
@@ -705,6 +708,37 @@
               <span class="card-link" data-i18n="case6.link">Inspect fleet</span>
             </div>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="featured-cases" aria-labelledby="featured-cases-title">
+      <div class="wrap">
+        <p class="sec-label" data-i18n="caseProof.label">Try it yourself</p>
+        <h2 id="featured-cases-title" class="sec-title" data-i18n="caseProof.title">Two real cases you can inspect</h2>
+        <p class="sec-sub" data-i18n="caseProof.intro">Compare an MCP server’s tool definitions or inspect the price of an external API call. Both checks work without an account or wallet.</p>
+        <div class="case-proof-grid">
+          <article id="histor-legion" class="case-proof-card">
+            <p class="card-tag" data-i18n="caseProof.histor.tag">HISTOR × LEGION · archived observations</p>
+            <h3 data-i18n="caseProof.histor.title">See what changed in an MCP server</h3>
+            <p data-i18n="caseProof.histor.body">On 19 October 2026, the two logs agreed on all 23 tool definitions for the same server. In a later HISTOR observation, all 23 names had a new prefix.</p>
+            <p data-i18n="caseProof.histor.try">Open the HISTOR change history and compare it with the dated LEGION record. The evidence covers the tool definitions advertised at those times.</p>
+            <div class="audience-actions">
+              <a class="btn btn-live" href="https://histor.modelmarket.dev/s/236eb5f0481cc99c" data-i18n="caseProof.histor.open">Open HISTOR change history</a>
+              <a class="btn btn-ghost" href="https://tlog.legion-api.com/tlog/v0/servers/com.aiapplyd/aiapplyd" data-i18n="caseProof.histor.compare">Open LEGION record</a>
+            </div>
+          </article>
+          <article id="x402-textokit" class="case-proof-card">
+            <p class="card-tag" data-i18n="caseProof.x402.tag">x402 / textokit · external seller</p>
+            <h3 data-i18n="caseProof.x402.title">Check an API price without a wallet</h3>
+            <p data-i18n="caseProof.x402.body">On 2 November 2026, the Hub recorded quotes from 20 textokit routes with the seller’s consent. For example, x402-ping quoted 0.001 USDC on Base at the time of observation.</p>
+            <p data-i18n="caseProof.x402.try">Read the quoted amount, asset, network and recipient in the Hub listing, or inspect the seller’s current HTTP 402 response with an unpaid HEAD request.</p>
+            <pre><code>curl -sSI https://tienda.textokit.store/api/x402-ping</code></pre>
+            <div class="audience-actions">
+              <a class="btn btn-live" href="https://modelmarket.dev/ai-market/v2/federation/observed-sellers" data-i18n="caseProof.x402.open">Open observed quotes</a>
+              <a class="btn btn-ghost" href="https://tienda.textokit.store/.well-known/x402" data-i18n="caseProof.x402.seller">Open seller’s route list</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -868,11 +902,11 @@
     </footer>
   </div>
 
-  <script type="module" src="js/i18n.js?v=20261010-onboarding"></script>
-  <script type="module" src="js/onboard.js?v=20261010-onboarding"></script>
-  <script type="module" src="js/boards.js?v=20261010-onboarding"></script>
-  <script type="module" src="js/scene.js?v=20261010-onboarding"></script>
-  <script type="module" src="js/proof.js?v=20261010-onboarding"></script>
-  <script type="module" src="js/main.js?v=20261010-onboarding"></script>
+  <script type="module" src="js/i18n.js?v=20261103-roles"></script>
+  <script type="module" src="js/onboard.js?v=20261103-roles"></script>
+  <script type="module" src="js/boards.js?v=20261103-roles"></script>
+  <script type="module" src="js/scene.js?v=20261103-roles"></script>
+  <script type="module" src="js/proof.js?v=20261103-roles"></script>
+  <script type="module" src="js/main.js?v=20261103-roles"></script>
 </body>
 </html>

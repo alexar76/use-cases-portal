@@ -1,10 +1,10 @@
 /**
  * Idea detail page — ?id= from data/boards.json + locales
  */
-import { mountPreview } from "./preview3d.js?v=20261010-onboarding";
-import { currentLang, onDict, getDict } from "./i18n.js?v=20261010-onboarding";
+import { mountPreview } from "./preview3d.js?v=20261103-roles";
+import { currentLang, onDict, getDict } from "./i18n.js?v=20261103-roles";
 
-const DATA_VERSION = "20261010-onboarding";
+const DATA_VERSION = "20261103-roles";
 
 const base = document.documentElement.dataset.base || "";
 // Ids that were renamed after the page had already been shared. Dropping one

@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 LANGS = ("en", "ru", "es", "fr", "zh")
-RELEASE_VERSION = "20261010-onboarding"
+RELEASE_VERSION = "20261103-roles"
 FORBIDDEN = re.compile(
     r"PromoMaterials|/Users/alex|investor-pack|data[\s_-]?room",
     re.IGNORECASE,

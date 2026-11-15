@@ -72,7 +72,7 @@ Public screen `#boards` — **7 directions · thin wedges only**. Cards open `id
 | Oracles | fair-draw |
 | Ops | momus-gate |
 
-**Cut from public board:** cold-chain, crane site-stop, grid intensity, prediction resolver, ACEX, Hunt, desktop SKUs, bridges, **radiation-evidence**, Floodbase/Fathom clone, Pano clone, First Street siting clone, NWS AutoWarn wrap, lightning-as-ignition, newsroom desk.
+**Cut from public board:** cold-chain, crane site-stop, grid intensity, prediction resolver, Agent Capital Exchange, Hunt, desktop SKUs, bridges, **radiation-evidence**, Floodbase/Fathom clone, Pano clone, First Street siting clone, NWS AutoWarn wrap, lightning-as-ignition, newsroom desk.
 
 **Featured after the 2026-08-13 business-case audit:** `atlas.fire.weather@v1` (FIRMS **and/or** EFFIS evidence snapshot), `atlas.watchbox.check@v1`, and **Flood Hydrology Evidence** as a vertical of `atlas.situation.brief@v1`. Campus Physical Nowcast sits on the Physical board (same SKU, named-campus buyer). GNSS remains a **threat-intelligence watchbox hypothesis**, not an aviation ADS-B product.
 

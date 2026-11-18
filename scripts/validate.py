@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 LANGS = ("en", "ru", "es", "fr", "zh")
-RELEASE_VERSION = "20261103-roles"
+RELEASE_VERSION = "20261118-portal-audit"
 FORBIDDEN = re.compile(
     r"PromoMaterials|/Users/alex|investor-pack|data[\s_-]?room",
     re.IGNORECASE,
@@ -97,6 +97,14 @@ def main() -> None:
         "usace-reservoir": ("gaia.reservoir.read@v1", "0.001"),
         "ireland-synoptic": ("gaia.weather.read@v1", "0.001"),
     }
+    audited_catalog = {
+        "geomag-window": ("atlas.geomag.window@v1", "0.050"),
+        "pv-irradiance-record": ("atlas.pv.irradiance.record@v1", "0.150"),
+        "smoke-operations": ("atlas.smoke.operations@v1", "0.120"),
+        "desk-presets": ("atlas.situation.brief@v1", "0.060"),
+        "route-integrity": ("atlas.route.integrity@v1", "0.250"),
+        "observability-attest": ("atlas.observability.attest@v1", "0.100"),
+    }
     for idea_id, idea in idea_registry.items():
         demo = idea.get("demo") if isinstance(idea, dict) else None
         expected = audited_demos.get(idea_id)
@@ -106,6 +114,13 @@ def main() -> None:
             actual = (str((demo or {}).get("capabilityId") or ""), str((demo or {}).get("priceUsd") or ""))
             if actual != expected:
                 fail(f"{idea_id}: demo contract {actual!r} != audited {expected!r}")
+        offer = idea.get("catalogOffer")
+        if offer is not None or idea_id in audited_catalog:
+            if not isinstance(offer, dict) or demo is not None:
+                fail(f"{idea_id}: catalogOffer requires a catalog-only card")
+            price = (offer.get("capabilityId"), offer.get("priceUsd"))
+            if price != audited_catalog.get(idea_id):
+                fail(f"{idea_id}: catalog contract {price!r} != audited {audited_catalog.get(idea_id)!r}")
         ref = idea.get("referenceDesk") if isinstance(idea, dict) else None
         if ref is not None:
             if not isinstance(ref, dict):
@@ -164,14 +179,12 @@ def main() -> None:
         "proof.console.returnedAt", "econ.metric.liveNow", "econ.metric.unavailable",
         *{f"proof.arch.{name}.body" for name in ("source", "gaia", "atlas", "hub", "product", "metis")},
         *{f"proof.term.{name}" for name in ("live", "sim", "attestation", "invoke", "receipt", "pay")},
-        "idea.live.runFire", "idea.live.runWatchbox", "idea.live.running",
+        "cta.firePaid", "idea.live.runWatchbox", "idea.live.running",
         "idea.live.waiting", "idea.live.success", "idea.live.error",
         "idea.live.noReceipt", "idea.live.copied", "idea.live.copyError",
         *{f"idea.live.metric.{name}" for name in (
-            "detections", "returned", "weather", "bbox", "matches",
-            "liveMatches", "layers", "evaluated",
+            "matches", "liveMatches", "layers", "evaluated",
         )},
-        "idea.live.yes", "idea.live.none", "idea.live.summaryFire",
         "idea.live.summaryWatchbox",
     }
     missing_dynamic = dynamic_proof_keys - en_keys

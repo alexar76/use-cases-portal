@@ -157,8 +157,8 @@
       "chip": "live-wedge",
       "scene": "storm",
       "accent": "#f97316",
-      "cta": "https://atlas.modelmarket.dev/?layers=fire,weather",
-      "ctaKey": "touchFire",
+      "cta": "#fire-paid-invoke",
+      "ctaKey": "firePaid",
       "rails": [
         "GAIA",
         "ATLAS",
@@ -167,21 +167,21 @@
       "livePath": [
         {
           "key": "idea.fire-hotspot.step1",
-          "href": "https://atlas.modelmarket.dev/?layers=fire,weather"
+          "href": "https://atlas.modelmarket.dev/?layers=fire,effis,weather"
         },
         {
           "key": "idea.fire-hotspot.step2",
-          "href": "https://atlas.modelmarket.dev/docs"
+          "href": "https://atlas.modelmarket.dev/docs#/default/product_fire_weather_api_v1_products_fire_weather_post"
         },
         {
           "key": "idea.fire-hotspot.step3",
-          "href": "https://modelmarket.dev"
+          "href": "https://modelmarket.dev/ai-market/v2/search?intent=atlas.fire.weather%40v1&limit=1"
         }
       ],
       "demo": {
         "capabilityId": "atlas.fire.weather@v1",
         "priceUsd": "0.080",
-        "source": "NASA FIRMS and/or Copernicus EFFIS + bounded GAIA weather context"
+        "source": "NASA FIRMS and/or Copernicus EFFIS, with GAIA weather when in range"
       },
       "sources": [
         {
@@ -211,7 +211,7 @@
       "chip": "live-wedge",
       "scene": "radar",
       "accent": "#22d3ee",
-      "cta": "https://atlas.modelmarket.dev/docs",
+      "cta": "https://atlas.modelmarket.dev/docs#/default/aimarket_invoke_ai_market_v2_invoke_post",
       "ctaKey": "touchWatchbox",
       "rails": [
         "ATLAS",
@@ -225,17 +225,17 @@
         },
         {
           "key": "idea.verified-watchbox.step2",
-          "href": "https://atlas.modelmarket.dev/docs"
+          "href": "https://atlas.modelmarket.dev/api/v1/products"
         },
         {
           "key": "idea.verified-watchbox.step3",
-          "href": "https://atlas.modelmarket.dev/api/v1/watchboxes"
+          "href": "https://atlas.modelmarket.dev/docs#/default/watchboxes_check_api_v1_watchboxes__watchbox_id__check_post"
         }
       ],
       "demo": {
         "capabilityId": "atlas.watchbox.check@v1",
         "priceUsd": "0.020",
-        "source": "ATLAS LIVE fleet snapshot"
+        "source": "ATLAS fleet snapshot"
       },
       "sources": [
         {
@@ -274,7 +274,11 @@
         },
         {
           "key": "idea.emberline-desk.step3",
-          "href": "ideas.html?v=20261007-onboarding&id=fire-hotspot"
+          "href": "ideas.html?v=20261118-portal-audit&id=fire-hotspot"
+        },
+        {
+          "key": "idea.reference.status",
+          "href": "https://emberlinedesk.com/status"
         }
       ],
       "sources": [
@@ -284,11 +288,11 @@
         },
         {
           "key": "idea.source.fireHotspotSku",
-          "href": "ideas.html?v=20261007-onboarding&id=fire-hotspot"
+          "href": "ideas.html?v=20261118-portal-audit&id=fire-hotspot"
         },
         {
           "key": "idea.source.watchboxSku",
-          "href": "ideas.html?v=20261007-onboarding&id=verified-watchbox"
+          "href": "ideas.html?v=20261118-portal-audit&id=verified-watchbox"
         },
         {
           "key": "idea.source.atlasDocs",
@@ -319,11 +323,11 @@
         },
         {
           "key": "idea.flood-hydrology.step2",
-          "href": "https://atlas.modelmarket.dev/docs"
+          "href": "https://atlas.modelmarket.dev/docs#/default/product_situation_brief_api_v1_products_situation_brief_post"
         },
         {
           "key": "idea.flood-hydrology.step3",
-          "href": "https://modelmarket.dev"
+          "href": "https://modelmarket.dev/ai-market/v2/search?intent=atlas.situation.brief%40v1&limit=1"
         }
       ],
       "demo": {
@@ -445,7 +449,7 @@
       "chip": "live-wedge",
       "scene": "pins",
       "accent": "#94a3b8",
-      "cta": "https://atlas.modelmarket.dev",
+      "cta": "https://atlas.modelmarket.dev/docs#/default/product_situation_brief_api_v1_products_situation_brief_post",
       "ctaKey": "touchCampus",
       "rails": [
         "ATLAS",
@@ -459,11 +463,11 @@
         },
         {
           "key": "idea.campus-nowcast.step2",
-          "href": "https://atlas.modelmarket.dev/docs"
+          "href": "https://atlas.modelmarket.dev/docs#/default/product_situation_brief_api_v1_products_situation_brief_post"
         },
         {
           "key": "idea.campus-nowcast.step3",
-          "href": "https://modelmarket.dev"
+          "href": "https://modelmarket.dev/ai-market/v2/search?intent=atlas.situation.brief%40v1&limit=1"
         }
       ],
       "demo": {
@@ -495,7 +499,7 @@
       "chip": "live-wedge",
       "scene": "storm",
       "accent": "#3de0c5",
-      "cta": "https://atlas.modelmarket.dev",
+      "cta": "https://atlas.modelmarket.dev/docs#/default/product_situation_brief_api_v1_products_situation_brief_post",
       "ctaKey": "touchSituation",
       "rails": [
         "ATLAS",
@@ -505,15 +509,15 @@
       "livePath": [
         {
           "key": "idea.situation-brief.step1",
-          "href": "https://atlas.modelmarket.dev"
+          "href": "https://atlas.modelmarket.dev/api/v1/products"
         },
         {
           "key": "idea.situation-brief.step2",
-          "href": "https://atlas.modelmarket.dev"
+          "href": "https://atlas.modelmarket.dev/docs#/default/product_situation_brief_api_v1_products_situation_brief_post"
         },
         {
           "key": "idea.situation-brief.step3",
-          "href": "https://modelmarket.dev"
+          "href": "https://modelmarket.dev/.well-known/ai-market.json"
         }
       ],
       "demo": {
@@ -526,7 +530,7 @@
       "chip": "live-wedge",
       "scene": "pins",
       "accent": "#22d3ee",
-      "cta": "https://atlas.modelmarket.dev",
+      "cta": "https://atlas.modelmarket.dev/docs#/default/product_nearest_api_v1_products_nearest_post",
       "ctaKey": "touchNearest",
       "rails": [
         "ATLAS",
@@ -539,11 +543,11 @@
         },
         {
           "key": "idea.nearest-read.step2",
-          "href": "https://atlas.modelmarket.dev"
+          "href": "https://atlas.modelmarket.dev/docs#/default/product_nearest_api_v1_products_nearest_post"
         },
         {
           "key": "idea.nearest-read.step3",
-          "href": "https://modelmarket.dev"
+          "href": "https://modelmarket.dev/ai-market/v2/search?intent=atlas.nearest.read%40v1&limit=1"
         }
       ],
       "demo": {
@@ -793,11 +797,11 @@
         },
         {
           "key": "idea.geomag-window.step2",
-          "href": "https://atlas.modelmarket.dev/docs"
+          "href": "https://atlas.modelmarket.dev/docs#/default/product_geomag_window_api_v1_products_geomag_window_post"
         },
         {
           "key": "idea.geomag-window.step3",
-          "href": "https://modelmarket.dev"
+          "href": "https://modelmarket.dev/ai-market/v2/search?intent=atlas.geomag.window%40v1&limit=1"
         }
       ],
       "sources": [
@@ -813,7 +817,11 @@
           "key": "idea.source.atlasDocs",
           "href": "https://atlas.modelmarket.dev/docs"
         }
-      ]
+      ],
+      "catalogOffer": {
+        "capabilityId": "atlas.geomag.window@v1",
+        "priceUsd": "0.050"
+      }
     },
     "pv-irradiance-record": {
       "chip": "live-wedge",
@@ -833,11 +841,11 @@
         },
         {
           "key": "idea.pv-irradiance-record.step2",
-          "href": "https://atlas.modelmarket.dev/docs"
+          "href": "https://atlas.modelmarket.dev/docs#/default/product_pv_irradiance_record_api_v1_products_pv_irradiance_record_post"
         },
         {
           "key": "idea.pv-irradiance-record.step3",
-          "href": "https://modelmarket.dev"
+          "href": "https://modelmarket.dev/ai-market/v2/search?intent=atlas.pv.irradiance.record%40v1&limit=1"
         }
       ],
       "sources": [
@@ -862,6 +870,10 @@
         "id": "solrecord",
         "href": "https://solrecord.modelmarket.dev/",
         "card": "solrecord-desk"
+      },
+      "catalogOffer": {
+        "capabilityId": "atlas.pv.irradiance.record@v1",
+        "priceUsd": "0.150"
       }
     },
     "smoke-operations": {
@@ -882,11 +894,11 @@
         },
         {
           "key": "idea.smoke-operations.step2",
-          "href": "https://atlas.modelmarket.dev/docs"
+          "href": "https://atlas.modelmarket.dev/docs#/default/product_smoke_operations_api_v1_products_smoke_operations_post"
         },
         {
           "key": "idea.smoke-operations.step3",
-          "href": "https://modelmarket.dev"
+          "href": "https://modelmarket.dev/ai-market/v2/search?intent=atlas.smoke.operations%40v1&limit=1"
         }
       ],
       "sources": [
@@ -902,13 +914,17 @@
           "key": "idea.source.atlasDocs",
           "href": "https://atlas.modelmarket.dev/docs"
         }
-      ]
+      ],
+      "catalogOffer": {
+        "capabilityId": "atlas.smoke.operations@v1",
+        "priceUsd": "0.120"
+      }
     },
     "desk-presets": {
       "chip": "live-wedge",
       "scene": "pins",
       "accent": "#3de0c5",
-      "cta": "https://atlas.modelmarket.dev/docs",
+      "cta": "https://atlas.modelmarket.dev/docs#/default/product_situation_brief_api_v1_products_situation_brief_post",
       "ctaKey": "touchDesks",
       "rails": [
         "ATLAS",
@@ -922,11 +938,11 @@
         },
         {
           "key": "idea.desk-presets.step2",
-          "href": "https://atlas.modelmarket.dev/docs"
+          "href": "https://atlas.modelmarket.dev/docs#/default/product_situation_brief_api_v1_products_situation_brief_post"
         },
         {
           "key": "idea.desk-presets.step3",
-          "href": "https://modelmarket.dev"
+          "href": "https://modelmarket.dev/ai-market/v2/search?intent=atlas.situation.brief%40v1&limit=1"
         }
       ],
       "sources": [
@@ -934,7 +950,11 @@
           "key": "idea.source.atlasDocs",
           "href": "https://atlas.modelmarket.dev/docs"
         }
-      ]
+      ],
+      "catalogOffer": {
+        "capabilityId": "atlas.situation.brief@v1",
+        "priceUsd": "0.060"
+      }
     },
     "route-integrity": {
       "chip": "live-wedge",
@@ -954,11 +974,11 @@
         },
         {
           "key": "idea.route-integrity.step2",
-          "href": "https://atlas.modelmarket.dev/docs"
+          "href": "https://atlas.modelmarket.dev/docs#/default/product_route_integrity_api_v1_products_route_integrity_post"
         },
         {
           "key": "idea.route-integrity.step3",
-          "href": "https://modelmarket.dev"
+          "href": "https://modelmarket.dev/ai-market/v2/search?intent=atlas.route.integrity%40v1&limit=1"
         }
       ],
       "sourceKind": "curated",
@@ -975,7 +995,11 @@
           "key": "idea.source.atlasJamming",
           "href": "https://atlas.modelmarket.dev/?layers=jamming"
         }
-      ]
+      ],
+      "catalogOffer": {
+        "capabilityId": "atlas.route.integrity@v1",
+        "priceUsd": "0.250"
+      }
     },
     "observability-attest": {
       "chip": "live-wedge",
@@ -995,11 +1019,11 @@
         },
         {
           "key": "idea.observability-attest.step2",
-          "href": "https://atlas.modelmarket.dev/docs"
+          "href": "https://atlas.modelmarket.dev/docs#/default/product_observability_attest_api_v1_products_observability_attest_post"
         },
         {
           "key": "idea.observability-attest.step3",
-          "href": "https://modelmarket.dev"
+          "href": "https://modelmarket.dev/ai-market/v2/search?intent=atlas.observability.attest%40v1&limit=1"
         }
       ],
       "sources": [
@@ -1015,7 +1039,11 @@
           "key": "idea.source.atlasDocs",
           "href": "https://atlas.modelmarket.dev/docs"
         }
-      ]
+      ],
+      "catalogOffer": {
+        "capabilityId": "atlas.observability.attest@v1",
+        "priceUsd": "0.100"
+      }
     },
     "england-river-gauge": {
       "chip": "live-wedge",
@@ -1194,7 +1222,7 @@
       ]
     },
     "answer-evidence-pack": {
-      "chip": "live",
+      "chip": "live-wedge",
       "scene": "receipt",
       "accent": "#a78bfa",
       "cta": "https://metis.modelmarket.dev",
@@ -1235,7 +1263,7 @@
       ]
     },
     "agent-spend-desk": {
-      "chip": "live",
+      "chip": "live-wedge",
       "scene": "ledger",
       "accent": "#fb7185",
       "cta": "https://magic-ai-factory.com/argus/",
@@ -1277,7 +1305,7 @@
       ]
     },
     "capability-bakeoff": {
-      "chip": "live",
+      "chip": "live-wedge",
       "scene": "compare",
       "accent": "#60a5fa",
       "cta": "https://themis.modelmarket.dev",
@@ -1319,7 +1347,7 @@
       ]
     },
     "capability-sla-pack": {
-      "chip": "live",
+      "chip": "live-wedge",
       "scene": "radar",
       "accent": "#f472b6",
       "cta": "https://logos.modelmarket.dev",
@@ -1401,7 +1429,7 @@
       ]
     },
     "water-intake-evidence": {
-      "chip": "live",
+      "chip": "live-wedge",
       "scene": "pins",
       "accent": "#38bdf8",
       "cta": "https://atlas.modelmarket.dev/?layers=river,weather",
@@ -1422,7 +1450,7 @@
         },
         {
           "key": "idea.water-intake-evidence.step3",
-          "href": "https://modelmarket.dev"
+          "href": "https://modelmarket.dev/ai-market/v2/search?intent=gaia.water_quality.read%40v1&limit=1"
         }
       ],
       "sources": [
@@ -1441,7 +1469,7 @@
       ]
     },
     "finland-winter-lane": {
-      "chip": "live",
+      "chip": "live-wedge",
       "scene": "storm",
       "accent": "#7dd3fc",
       "cta": "https://atlas.modelmarket.dev/?layers=aviation,road",
@@ -1462,7 +1490,7 @@
         },
         {
           "key": "idea.finland-winter-lane.step3",
-          "href": "https://modelmarket.dev"
+          "href": "https://modelmarket.dev/ai-market/v2/search?intent=gaia.road.read%40v1&limit=1"
         }
       ],
       "sources": [
@@ -1497,11 +1525,11 @@
         },
         {
           "key": "idea.tideline-desk.step2",
-          "href": "https://tideline.modelmarket.dev/"
+          "href": "https://tideline.modelmarket.dev/status"
         },
         {
           "key": "idea.tideline-desk.step3",
-          "href": "ideas.html?v=20261007-onboarding&id=flood-hydrology"
+          "href": "ideas.html?v=20261118-portal-audit&id=flood-hydrology"
         }
       ],
       "sources": [
@@ -1511,7 +1539,7 @@
         },
         {
           "key": "idea.source.floodSku",
-          "href": "ideas.html?v=20261007-onboarding&id=flood-hydrology"
+          "href": "ideas.html?v=20261118-portal-audit&id=flood-hydrology"
         },
         {
           "key": "idea.source.atlasFlood",
@@ -1536,11 +1564,11 @@
         },
         {
           "key": "idea.solrecord-desk.step2",
-          "href": "https://solrecord.modelmarket.dev/"
+          "href": "https://solrecord.modelmarket.dev/status"
         },
         {
           "key": "idea.solrecord-desk.step3",
-          "href": "ideas.html?v=20261007-onboarding&id=pv-irradiance-record"
+          "href": "ideas.html?v=20261118-portal-audit&id=pv-irradiance-record"
         }
       ],
       "sources": [
@@ -1550,7 +1578,7 @@
         },
         {
           "key": "idea.source.pvSku",
-          "href": "ideas.html?v=20261007-onboarding&id=pv-irradiance-record"
+          "href": "ideas.html?v=20261118-portal-audit&id=pv-irradiance-record"
         },
         {
           "key": "idea.source.atlasDocs",
@@ -1576,11 +1604,11 @@
         },
         {
           "key": "idea.seamark-desk.step2",
-          "href": "https://seamark.modelmarket.dev/"
+          "href": "https://seamark.modelmarket.dev/status"
         },
         {
           "key": "idea.seamark-desk.step3",
-          "href": "ideas.html?v=20261007-onboarding&id=nordic-ais"
+          "href": "ideas.html?v=20261118-portal-audit&id=nordic-ais"
         }
       ],
       "sources": [
@@ -1590,7 +1618,7 @@
         },
         {
           "key": "idea.source.aisSku",
-          "href": "ideas.html?v=20261007-onboarding&id=nordic-ais"
+          "href": "ideas.html?v=20261118-portal-audit&id=nordic-ais"
         },
         {
           "key": "idea.source.atlasAis",
@@ -1615,11 +1643,11 @@
         },
         {
           "key": "idea.plinth-desk.step2",
-          "href": "https://plinth.modelmarket.dev/"
+          "href": "https://plinth.modelmarket.dev/status"
         },
         {
           "key": "idea.plinth-desk.step3",
-          "href": "ideas.html?v=20261007-onboarding&id=campus-nowcast"
+          "href": "ideas.html?v=20261118-portal-audit&id=campus-nowcast"
         }
       ],
       "sources": [
@@ -1629,7 +1657,7 @@
         },
         {
           "key": "idea.source.campusSku",
-          "href": "ideas.html?v=20261007-onboarding&id=campus-nowcast"
+          "href": "ideas.html?v=20261118-portal-audit&id=campus-nowcast"
         },
         {
           "key": "idea.source.atlasDocs",

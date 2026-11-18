@@ -2,11 +2,12 @@
  * Live proof, clickable architecture, glossary, and transparent economics.
  * The snapshot is read-only. A GAIA invoke only happens after an explicit click.
  */
-import { currentLang, getDict, onDict } from "./i18n.js?v=20261103-roles";
+import { currentLang, getDict, onDict } from "./i18n.js?v=20261118-portal-audit";
 
 const SNAPSHOT_URL = "/live/snapshot.json";
 const INVOKE_URL = "/live/weather";
 const LIVE_WEATHER_DEVICE_ID = "om-wx-01";
+const WEATHER_CATALOG_PRICE_USD = 0.001;
 // Misses tolerated before the card says the fleet is unavailable. Covers the ATLAS
 // snapshot warm-up after a redeploy without ever substituting a cached value.
 const UNAVAILABLE_AFTER_FAILURES = 3;
@@ -78,7 +79,7 @@ const architecture = {
   gaia: { number: "02", title: "GAIA", key: "proof.arch.gaia.body", href: "https://iot.modelmarket.dev" },
   atlas: { number: "03", title: "ATLAS", key: "proof.arch.atlas.body", href: "https://atlas.modelmarket.dev" },
   hub: { number: "04", title: "HUB", key: "proof.arch.hub.body", href: "https://modelmarket.dev" },
-  product: { number: "05", titleKey: "proof.arch.product", key: "proof.arch.product.body", href: "ideas.html?v=20261103-roles&id=fire-hotspot" },
+  product: { number: "05", titleKey: "proof.arch.product", key: "proof.arch.product.body", href: "ideas.html?v=20261118-portal-audit&id=fire-hotspot" },
   metis: { number: "+", title: "METIS", key: "proof.arch.metis.body", href: "https://metis.modelmarket.dev" },
 };
 
@@ -564,11 +565,13 @@ function paintInvoke(payload, elapsedMs) {
     elements.attestation.title = String(proof || "");
   }
   if (elements.price) {
-    const listPrice = finite(payload?.list_price_usd ?? payload?.price_usd ?? result?.price_usd ?? receipt?.price_usd);
     const sandbox = payload?.sandbox?.sandbox === true || payload?.sandbox === true;
+    const listPrice = finite(payload?.list_price_usd);
+    const catalogPrice = listPrice > 0 ? listPrice : WEATHER_CATALOG_PRICE_USD;
+    const paidPrice = finite(payload?.price_usd ?? result?.price_usd ?? receipt?.price_usd);
     elements.price.textContent = sandbox
-      ? `${dictValue("proof.console.catalog", "catalog")} $${(listPrice ?? .001).toFixed(3)} · ${dictValue("proof.console.charged", "charged")} $0`
-      : listPrice === null ? "$0.001" : `$${listPrice.toFixed(3)}`;
+      ? `${dictValue("proof.console.catalog", "catalog")} $${catalogPrice.toFixed(3)} · ${dictValue("proof.console.charged", "charged")} $0`
+      : `$${(paidPrice ?? catalogPrice).toFixed(3)}`;
   }
   if (elements.receipt) {
     elements.receipt.textContent = `AWR/2 · ${compact(provenance.receipt_id, 8)}`;
@@ -608,11 +611,11 @@ async function runInvoke() {
     if (error?.code === "trial_quota_exhausted") {
       showInvokeError(new Error(dictValue(
         "proof.console.quotaExhausted",
-        "Today’s free live requests are used. The demo allowance resets tomorrow.",
+        "The free live demo quota is exhausted. Try again when the hourly quota renews.",
       )));
       elements.run.dataset.locked = "quota";
       elements.run.disabled = true;
-      elements.run.textContent = dictValue("proof.console.quotaButton", "Daily demo limit reached");
+      elements.run.textContent = dictValue("proof.console.quotaButton", "Free demo quota reached");
       emit("live-invoke", "quota-exhausted");
     } else if (Number(error?.status || 0) === 429) {
       const seconds = error?.retryAfterSeconds || (error?.code === "rate_limit_exceeded" ? 60 : 12);

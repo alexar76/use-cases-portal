@@ -1,10 +1,10 @@
 /**
  * Idea detail page — ?id= from data/boards.json + locales
  */
-import { mountPreview } from "./preview3d.js?v=20261103-roles";
-import { currentLang, onDict, getDict } from "./i18n.js?v=20261103-roles";
+import { mountPreview } from "./preview3d.js?v=20261118-portal-audit";
+import { currentLang, onDict, getDict } from "./i18n.js?v=20261118-portal-audit";
 
-const DATA_VERSION = "20261103-roles";
+const DATA_VERSION = "20261118-portal-audit";
 
 const base = document.documentElement.dataset.base || "";
 // Ids that were renamed after the page had already been shared. Dropping one
@@ -20,10 +20,8 @@ const VISITOR_STORAGE_KEY = "aimarket-use-proof-visitor";
 const RECEIPT_ORIGIN = "https://modelmarket.dev";
 const VERIFIER_ORIGIN = "https://verify.modelmarket.dev";
 const MAX_INVOKE_BYTES = 1024 * 1024;
-const LIVE_CASES = {
-  "fire-hotspot": { endpoint: "/live/fire-weather", runKey: "idea.live.runFire" },
-  "verified-watchbox": { endpoint: "/live/watchbox", runKey: "idea.live.runWatchbox" },
-};
+const WATCHBOX_DEMO = id === "verified-watchbox";
+const FIRE_PAID_INVOKE = id === "fire-hotspot";
 
 const els = {
   missing: document.getElementById("idea-missing"),
@@ -48,6 +46,10 @@ const els = {
   refNote: document.getElementById("idea-ref-note"),
   refOpen: document.getElementById("idea-ref-open"),
   refCard: document.getElementById("idea-ref-card"),
+  offer: document.getElementById("idea-catalog-offer"),
+  offerPrice: document.getElementById("idea-catalog-price"),
+  offerLink: document.getElementById("idea-catalog-link"),
+  firePaid: document.getElementById("fire-paid-invoke"),
   liveProof: document.getElementById("idea-live-proof"),
   liveRun: document.getElementById("idea-live-run"),
   liveStatus: document.getElementById("idea-live-status"),
@@ -181,25 +183,7 @@ function compactTime(value) {
   }).format(date);
 }
 
-function bboxLabel(payload) {
-  const bbox = payload?.bbox;
-  if (!bbox || ![bbox.west, bbox.south, bbox.east, bbox.north].every(Number.isFinite)) return "52–57°E · 50–54°N";
-  return `${bbox.west}–${bbox.east}°E · ${bbox.south}–${bbox.north}°N`;
-}
-
 function liveMetrics(payload, dict) {
-  if (id === "fire-hotspot") {
-    const evidence = payload?.evidence || {};
-    const detectionCount = evidence.live_fire_detection_count ?? payload?.hotspot_count ?? payload?.hotspots?.length ?? 0;
-    const returnedCount = evidence.returned_detection_count ?? payload?.hotspots?.length ?? 0;
-    const weather = evidence.nearby_weather_available ?? Boolean(payload?.weather);
-    return [
-      [dict["idea.live.metric.detections"] || "LIVE DETECTIONS", new Intl.NumberFormat(localeName()).format(detectionCount)],
-      [dict["idea.live.metric.returned"] || "RETURNED", new Intl.NumberFormat(localeName()).format(returnedCount)],
-      [dict["idea.live.metric.weather"] || "WEATHER ≤1000 KM", weather ? (dict["idea.live.yes"] || "YES") : (dict["idea.live.none"] || "NONE · HONEST")],
-      [dict["idea.live.metric.bbox"] || "FIXED BBOX", bboxLabel(payload)],
-    ];
-  }
   return [
     [dict["idea.live.metric.matches"] || "MATCHES", new Intl.NumberFormat(localeName()).format(payload?.match_count ?? 0)],
     [dict["idea.live.metric.liveMatches"] || "LIVE MATCHES", new Intl.NumberFormat(localeName()).format(payload?.live_match_count ?? 0)],
@@ -209,26 +193,15 @@ function liveMetrics(payload, dict) {
 }
 
 function liveSummary(payload, dict) {
-  if (id === "fire-hotspot") {
-    // ATLAS free-form summaries are currently English.  Keep the live numbers
-    // below, but use reviewed portal copy for the sentence so switching locale
-    // never leaks an untranslated upstream paragraph into the proof card.
-    return dict["idea.live.summaryFire"] || payload?.summary || payload?.risk_note
-      || payload?.drivers?.[0] || "Source-attributed FIRMS evidence returned.";
-  }
   const total = new Intl.NumberFormat(localeName()).format(payload?.live_match_count ?? payload?.match_count ?? 0);
   return (dict["idea.live.summaryWatchbox"] || "{count} LIVE matches in the fixed watchbox.").replace("{count}", total);
 }
 
 function renderLiveProof(dict) {
-  const config = LIVE_CASES[id];
-  if (!els.liveProof || !config) {
-    if (els.liveProof) els.liveProof.hidden = true;
-    return;
-  }
+  if (!WATCHBOX_DEMO || !els.liveProof) return;
   els.liveProof.hidden = false;
   if (els.liveRun) {
-    const label = dict[config.runKey] || dict["idea.live.run"] || "Run LIVE scenario";
+    const label = dict["idea.live.runWatchbox"] || "Run Verified Watchbox";
     els.liveRun.querySelector("span").textContent = liveProofState.mode === "running"
       ? (dict["idea.live.running"] || "Routing LIVE data…") : label;
     els.liveRun.disabled = liveProofState.mode === "running";
@@ -269,13 +242,12 @@ function renderLiveProof(dict) {
 }
 
 async function runLiveProof() {
-  const config = LIVE_CASES[id];
-  if (!config || liveProofState.mode === "running") return;
+  if (!WATCHBOX_DEMO || liveProofState.mode === "running") return;
   liveProofState = { mode: "running", payload: null, provenance: null, message: "" };
   renderLiveProof(getDict() || {});
   emitInteraction("live_invoke", "started");
   try {
-    const response = await fetch(config.endpoint, {
+    const response = await fetch("/live/watchbox", {
       method: "POST",
       cache: "no-store",
       headers: {
@@ -380,8 +352,7 @@ function stateCopy(dict, state) {
         : (dict["idea.receipt.source.invalid"] || "Unverified input"),
     signature: dict["idea.receipt.signatureSample"] || "NOT PRESENT · SCHEMA SAMPLE",
     seq: dict["idea.receipt.seqSample"] || "not emitted",
-    price: state === "live" ? price : "$0.000",
-    settlementCode: state === "live" ? "ELIGIBLE_IF_VERIFIED" : state === "sim" ? "DEMO_ONLY" : "REFUSED",
+    price: state === "live" ? price : "—",
   };
 }
 
@@ -406,7 +377,7 @@ function paintState(dict) {
   els.receiptSignature.textContent = copy.signature;
   els.receiptSeq.textContent = copy.seq;
   els.receiptPrice.textContent = copy.price;
-  els.receiptSettlement.textContent = copy.settlementCode;
+  els.receiptSettlement.textContent = copy.settlement;
   els.receiptNote.textContent = dict[`idea.receipt.${activeState}.note`] || "";
 }
 
@@ -587,6 +558,19 @@ function paint() {
   paintSources(dict);
   paintReferenceDesk(dict);
   renderLiveProof(dict);
+  const offer = cachedIdea.demo || cachedIdea.catalogOffer;
+  els.offer.hidden = !offer;
+  if (offer) {
+    const decimal = new Intl.NumberFormat(localeName(), {
+      style: "currency", currency: "USD",
+      minimumFractionDigits: 3, maximumFractionDigits: 3,
+    });
+    els.offerPrice.textContent = decimal.format(Number(offer.priceUsd));
+    const offerUrl = new URL("https://modelmarket.dev/ai-market/v2/search");
+    offerUrl.searchParams.set("intent", offer.capabilityId);
+    els.offerLink.href = offerUrl.href;
+  }
+  els.firePaid.hidden = !FIRE_PAID_INVOKE;
   const hasDemo = Boolean(cachedIdea.demo?.capabilityId && cachedIdea.demo?.priceUsd);
   els.simulator.hidden = !hasDemo;
   els.demoBadge.hidden = !hasDemo;
@@ -598,6 +582,7 @@ function paint() {
   paintPerspective(dict);
   if (hasDemo) paintState(dict);
   els.cta.href = cachedIdea.cta || "#";
+  if (FIRE_PAID_INVOKE) els.cta.removeAttribute("target");
   els.cta.textContent = dict[`cta.${cachedIdea.ctaKey}`] || dict["cta.open"] || "Open";
   els.back.href = `${base}index.html#boards`;
   document.documentElement.style.setProperty("--board-accent", cachedIdea.accent || "#3de0c5");

@@ -5,7 +5,7 @@
  * Set <html data-base="../"> on nested pages so locale fetch resolves.
  */
 const LOCALES = ["en", "ru", "es", "fr", "zh"];
-const LOCALE_VERSION = "20261103-roles";
+const LOCALE_VERSION = "20261118-portal-audit";
 const STORAGE_KEY = "aimarket-portal-lang";
 const cache = Object.create(null);
 const listeners = new Set();

@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en" data-base="" data-release="20261103-roles">
+<html lang="en" data-base="" data-release="20261118-portal-audit">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Idea · AIMarket</title>
   <link href="fonts/fonts.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/portal.css?v=20261103-roles">
+  <link rel="stylesheet" href="css/portal.css?v=20261118-portal-audit">
 </head>
 <body data-idea-page="1">
   <div class="veil" aria-hidden="true"></div>
@@ -45,6 +45,12 @@
             <a id="idea-cta" class="btn btn-live" href="#" target="_blank" rel="noopener">Open</a>
             <a class="btn btn-ghost" href="index.html#boards" data-i18n="idea.back">← All boards</a>
           </div>
+          <p id="idea-catalog-offer" class="idea-live-intro" hidden>
+            <strong data-i18n="idea.offer.catalog">Catalog price per call</strong>
+            <strong id="idea-catalog-price"></strong>.
+            <span data-i18n="idea.offer.terms">Hub lists a separate routing price. Check the actual payment quote for the total and payment method.</span>
+            <a id="idea-catalog-link" href="https://modelmarket.dev" target="_blank" rel="noopener" data-i18n="idea.offer.link">View the Hub offer ↗</a>
+          </p>
           <div id="idea-livepath-wrap" hidden>
             <p class="idea-livepath-label" data-i18n="idea.livePath">Live path now</p>
             <div id="idea-livepath" class="path idea-livepath"></div>
@@ -88,14 +94,14 @@
         </div>
       </section>
       <aside id="idea-ref" class="idea-ref" hidden>
-        <p data-i18n="idea.ref.label">REFERENCE SOLUTION</p>
+        <p data-i18n="idea.ref.label">REFERENCE DEMO</p>
         <div class="idea-ref-card">
-          <span id="idea-ref-chip" class="chip chip-partner">example desk</span>
+          <span id="idea-ref-chip" class="chip chip-partner" data-i18n="chip.example">reference demo</span>
           <h2 id="idea-ref-title"></h2>
           <p id="idea-ref-teaser"></p>
-          <p id="idea-ref-note" class="idea-ref-note" data-i18n="idea.ref.note">Demo host. Checkout is closed. Not a first-party AIMarket product.</p>
+          <p id="idea-ref-note" class="idea-ref-note" data-i18n="idea.ref.note">AIMarket demo with sample data and simulated payments. Checkout is disabled.</p>
           <div class="idea-ref-actions">
-            <a id="idea-ref-open" class="btn btn-live" href="#" target="_blank" rel="noopener">Open the live desk →</a>
+            <a id="idea-ref-open" class="btn btn-live" href="#" target="_blank" rel="noopener" data-i18n="idea.ref.open">Open the public demo →</a>
             <a id="idea-ref-card" class="btn btn-ghost" href="#">Read the desk card →</a>
           </div>
         </div>
@@ -110,6 +116,26 @@
         <p data-i18n="idea.sources.label">EVIDENCE &amp; LIMITS · PRIMARY LINKS</p>
         <div id="idea-sources"></div>
       </aside>
+      <section id="fire-paid-invoke" class="idea-lab case-proof-card" hidden aria-labelledby="fire-paid-title">
+        <p class="card-tag" data-i18n="idea.firePaid.label">PAID CALL · BASE USDC</p>
+        <h2 id="fire-paid-title" data-i18n="idea.firePaid.title">Buy a Fire + Weather result</h2>
+        <p data-i18n="idea.firePaid.quote">Request a quote for the example area. This command spends nothing. HTTP 402 returns the amount, recipient, expiry and payment binding. The example caps the price at $0.08.</p>
+        <pre><code>curl -sS -i https://modelmarket.dev/ai-market/v2/invoke \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "product_id": "atlas.products",
+    "capability_id": "atlas.fire.weather@v1",
+    "source_hub": "https://atlas.modelmarket.dev",
+    "max_price_usd": 0.08,
+    "input": {"west": 52, "south": 50, "east": 57, "north": 54, "limit": 8, "max_weather_km": 1000}
+  }'</code></pre>
+        <p data-i18n="idea.firePaid.pay">If you accept the quote, use a wallet funded with USDC on Base. Submit the quoted EIP-3009 transferWithAuthorization before expiry. Once it is confirmed, repeat the same request with X-Payment (transaction hash), X-Payment-Nonce and X-Payment-Secret from your quote. Keep the secret private.</p>
+        <p data-i18n="idea.firePaid.result">The on-chain transfer happens before delivery. If you submit it yourself, you need ETH on Base for gas. A refusal does not reverse the transfer. Keep the original quote and transaction hash to resolve a refusal. Save the signed receipt after a successful call.</p>
+        <div class="idea-live-actions">
+          <a class="btn btn-live" href="https://github.com/alexar76/aimarket-hub/blob/main/docs/money-rails.md#11-without-a-fee--the-plain-path" target="_blank" rel="noopener" data-i18n="idea.firePaid.guide">Open the payment guide ↗</a>
+          <a class="btn btn-ghost" href="https://atlas.modelmarket.dev/docs#/default/product_fire_weather_api_v1_products_fire_weather_post" target="_blank" rel="noopener" data-i18n="idea.firePaid.api">Open the ATLAS input contract ↗</a>
+        </div>
+      </section>
       <section id="idea-live-proof" class="idea-live-proof" hidden aria-labelledby="idea-live-title">
         <div class="idea-live-aurora" aria-hidden="true"></div>
         <div class="idea-live-signal" aria-hidden="true">
@@ -178,7 +204,7 @@
             <div class="idea-sim-stage" data-state="live">
               <div class="idea-packet"><span></span><b data-i18n="idea.lab.packet">EVIDENCE ENVELOPE</b></div>
               <div class="idea-gate"><i></i><strong id="idea-gate-label"></strong></div>
-              <div class="idea-settlement"><small data-i18n="idea.lab.settlement">SETTLEMENT</small><strong id="idea-settlement-result"></strong></div>
+              <div class="idea-settlement"><small data-i18n="idea.lab.settlement">SAMPLE BILLING</small><strong id="idea-settlement-result"></strong></div>
             </div>
             <p id="idea-state-explainer" class="idea-state-explainer" aria-live="polite"></p>
             <button id="idea-receipt-toggle" class="idea-receipt-toggle" type="button" aria-expanded="false"><span data-i18n="idea.receipt.open">Inspect the receipt</span><i>⌄</i></button>
@@ -202,11 +228,11 @@
     <footer class="foot">
       <div class="wrap">
         <div><strong>AIMarket</strong> · portal</div>
-        <div data-i18n="foot.line">Point your domain at /portal · MIT surfaces · crypto optional</div>
+        <div data-i18n="foot.line">AIMarket use cases · public demos and API guides</div>
       </div>
     </footer>
   </div>
-  <script type="module" src="js/i18n.js?v=20261103-roles"></script>
-  <script type="module" src="js/idea-page.js?v=20261103-roles"></script>
+  <script type="module" src="js/i18n.js?v=20261118-portal-audit"></script>
+  <script type="module" src="js/idea-page.js?v=20261118-portal-audit"></script>
 </body>
 </html>

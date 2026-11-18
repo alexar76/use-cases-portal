@@ -349,6 +349,7 @@ section{padding:clamp(56px,10vh,110px) clamp(16px,4vw,48px)}
 
 .case-proof-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 .case-proof-card{display:flex;flex-direction:column;min-width:0;padding:clamp(20px,3vw,30px);border:1px solid var(--line);border-radius:20px;background:var(--glass)}
+.case-proof-card[hidden]{display:none}
 .case-proof-card h3{font-family:var(--font-display);margin:0 0 12px}
 .case-proof-card .card-tag{margin-top:0}
 .case-proof-card p:not(.card-tag){color:var(--muted);margin:0 0 16px}
